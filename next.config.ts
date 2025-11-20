@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'beehiiv-images-production.s3.amazonaws.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets-v2.circle.so',
+      },
     ],
   },
 };
