@@ -17,6 +17,15 @@ const config: Config = {
         yellow: "#faca2c",
         "light-blue": "#ddf3ff",
 
+        // FG-prefixed colors (for updates page)
+        'fg-navy': '#1a2949',
+        'fg-teal': '#0067a2',
+        'fg-light-blue': '#ddf3ff',
+        'fg-orange': '#fa8526',
+        'fg-yellow': '#faca2c',
+        'fg-accent-teal': '#00c8b7',
+        'fg-coral': '#ff6f61',
+
         // Neutrals
         background: "var(--background)",
         foreground: "var(--foreground)",
