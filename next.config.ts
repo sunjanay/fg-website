@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'avatar.vercel.sh',
       },
+      {
+        protocol: 'https',
+        hostname: 'beehiiv-images-production.s3.amazonaws.com',
+      },
     ],
   },
 };
