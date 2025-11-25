@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, FileText, Newspaper, ArrowRight, Heart, Link2, Check, ChevronLeft, ChevronRight, Instagram, Youtube, Linkedin, Facebook } from 'lucide-react'
+import { Calendar, FileText, Newspaper, ArrowRight, Heart, Link2, Check, ChevronLeft, ChevronRight, Instagram, Youtube, Linkedin, Facebook, Mail } from 'lucide-react'
 import Image from 'next/image'
+import Script from 'next/script'
 import updatesData from '@/data/updates.json'
 
 interface CircleEvent {
@@ -738,6 +739,45 @@ function TestimonialSection() {
   )
 }
 
+function ContactSection() {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={containerVariants}
+      className="mt-10 md:mt-12"
+    >
+      <motion.div variants={itemVariants} className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-3">
+          Get in Touch
+        </h2>
+        <p className="text-fg-navy/60 max-w-2xl mx-auto">
+          Have questions? Want to partner with us? We'd love to hear from you.
+        </p>
+      </motion.div>
+
+      <motion.div
+        variants={itemVariants}
+        className="bg-white rounded-2xl shadow-sm border border-fg-navy/5 overflow-hidden"
+      >
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 rounded-lg bg-fg-teal/10">
+              <Mail className="w-5 h-5 text-fg-teal" />
+            </div>
+            <h3 className="font-bold text-lg text-fg-navy">Contact Us</h3>
+          </div>
+          <div
+            data-tf-live="01KAF384A3ZB71SN3JRSRCSWAD"
+            className="w-full min-h-[400px]"
+          />
+        </div>
+      </motion.div>
+    </motion.section>
+  )
+}
+
 function AppDownloadSection() {
   const appLinks = [
     {
@@ -1273,9 +1313,15 @@ export default function Home() {
         {/* Partners */}
         <PartnersSection />
 
+        {/* Contact Form */}
+        <ContactSection />
+
         {/* App Download Section */}
         <AppDownloadSection />
       </div>
+
+      {/* Typeform Embed Script */}
+      <Script src="//embed.typeform.com/next/embed.js" strategy="lazyOnload" />
     </div>
   )
 }
