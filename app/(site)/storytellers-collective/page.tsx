@@ -72,7 +72,14 @@ export default function Home() {
   };
 
   return (
-    <div className="relative bg-white dark:bg-slate-900" style={{'--foster-blue': '#1E5F99', '--deep-navy': '#2C3E50', '--soft-blue': '#D6E9F5', '--bright-orange': '#F39C12', '--gold-star': '#FFD700', position: 'relative'} as React.CSSProperties}>
+    <div className="relative bg-[#fafbfc]">
+      {/* Subtle texture matching homepage */}
+      <div
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a2949' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
       {/* Hero Section */}
       <section className="flex items-center justify-center px-4 py-24" style={{backgroundColor: '#ffffff'}}>
@@ -99,7 +106,7 @@ export default function Home() {
               </BlurFade>
 
               <BlurFade delay={0.75}>
-                <p className="text-base md:text-lg max-w-3xl mx-auto mb-8" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+                <p className="text-base md:text-lg max-w-3xl mx-auto mb-8" style={{color: '#1a2949', opacity: 0.7, lineHeight: '1.6', fontWeight: '400'}}>
                   {subtitleWords}
                 </p>
               </BlurFade>
@@ -131,7 +138,7 @@ export default function Home() {
                 {heroWords}
               </h2>
 
-              <p className="text-base md:text-lg max-w-3xl mx-auto mb-8" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+              <p className="text-base md:text-lg max-w-3xl mx-auto mb-8" style={{color: '#1a2949', opacity: 0.7, lineHeight: '1.6', fontWeight: '400'}}>
                 {subtitleWords}
               </p>
 
@@ -165,7 +172,7 @@ export default function Home() {
                 Your Story Is Your Power
               </h2>
 
-              <p style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+              <p style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                 The Foster Greatness Storyteller Collective isn't just another advocacy program—it's a revolutionary platform where personal narratives drive systemic transformation.
               </p>
 
@@ -188,7 +195,7 @@ export default function Home() {
                 <p className="mb-2" style={{color: '#0067a2', fontWeight: '700'}}>
                   Built by foster youth, for foster youth.
                 </p>
-                <p className="text-sm" style={{color: '#2C3E50'}}>
+                <p className="text-sm" style={{color: '#1a2949'}}>
                   Every aspect designed by those who've walked this path.
                 </p>
               </div>
@@ -203,7 +210,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl mb-4" style={{color: '#1a2949', fontWeight: '700'}}>
                 Beyond Traditional Advocacy
               </h2>
-              <p style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400', marginBottom: '1.5rem'}}>
+              <p style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400', marginBottom: '1.5rem'}}>
                 Storytellers become:
               </p>
               <div className="space-y-3">
@@ -219,7 +226,7 @@ export default function Home() {
                   return (
                     <div key={idx} className="flex items-start space-x-3">
                       <span className="mt-1 text-lg" style={{color: bulletColor}}>✦</span>
-                      <p style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+                      <p style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                         <strong style={{color: '#0067a2'}}>{item.split(' ')[0]} {item.split(' ')[1]}</strong>
                         {item.substring(item.indexOf(' ', item.indexOf(' ') + 1))}
                       </p>
@@ -258,8 +265,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="p-8 rounded-lg" style={{backgroundColor: '#D6E9F5', border: '1px solid #1E5F99'}}>
-                <blockquote className="text-lg mb-4" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400', fontStyle: 'italic'}}>
+              <div className="p-8 rounded-lg" style={{backgroundColor: '#ddf3ff', border: '1px solid #0067a2'}}>
+                <blockquote className="text-lg mb-4" style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400', fontStyle: 'italic'}}>
                   "Being part of the Storyteller Collective gave me the starting point I needed to launch my brand and the motivation to begin new projects. What started as just ideas have now taken shape, and Foster Greatness continues to provide the support I need to turn my goals into reality."
                 </blockquote>
                 <div className="flex items-center gap-4">
@@ -273,8 +280,8 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <p className="font-medium" style={{color: '#1E5F99'}}>Antoinette Gutierrez</p>
-                    <p className="text-sm" style={{color: '#2C3E50', opacity: 0.8}}>Storyteller Alumni</p>
+                    <p className="font-medium" style={{color: '#0067a2'}}>Antoinette Gutierrez</p>
+                    <p className="text-sm" style={{color: '#1a2949', opacity: 0.8}}>Storyteller Alumni</p>
                   </div>
                 </div>
               </div>
@@ -295,7 +302,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl mb-4" style={{color: '#1a2949', fontWeight: '700'}}>
               The Storyteller Experience
             </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{color: '#2C3E50', lineHeight: '1.6'}}>
+            <p className="text-lg max-w-2xl mx-auto" style={{color: '#1a2949', lineHeight: '1.6'}}>
               A comprehensive program designed to amplify your voice and impact
             </p>
           </motion.div>
@@ -340,14 +347,14 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="relative group"
               >
-                <div className="bg-white p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-lg" style={{border: '1px solid #D6E9F5'}}>
+                <div className="bg-white p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-lg" style={{border: '1px solid #ddf3ff'}}>
                   <div className="mb-6 text-4xl">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl mb-4" style={{color: '#1a2949', fontWeight: '700'}}>
                     {feature.title}
                   </h3>
-                  <p className="text-sm" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+                  <p className="text-sm" style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                     {feature.description}
                   </p>
                 </div>
@@ -398,12 +405,12 @@ export default function Home() {
                 The Foster Care Storytelling Companion: Your Guide to Being Heard
               </h3>
 
-              <p style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+              <p style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                 Foster Greatness created this comprehensive storytelling guide specifically for current and former foster youth who are ready to reclaim their narratives. Written entirely by people with lived experience in foster care, this 60+ page resource transforms storytelling from an act of vulnerability into a tool for empowerment.
               </p>
 
               <div>
-                <p className="mb-3" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+                <p className="mb-3" style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                   This resource is designed for foster youth and alumni who want to:
                 </p>
                 <ul className="space-y-2">
@@ -416,7 +423,7 @@ export default function Home() {
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
                       <span style={{color: '#00c8b7'}}>✦</span>
-                      <span style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+                      <span style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
                         {item}
                       </span>
                     </li>
@@ -434,11 +441,11 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-12 max-w-2xl mx-auto"
           >
-            <div className="bg-gradient-to-br from-[#D6E9F5] to-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-gradient-to-br from-[#ddf3ff] to-white rounded-xl p-8 shadow-lg border border-gray-100">
               <h4 className="text-2xl mb-2 text-center" style={{color: '#1a2949', fontWeight: '700'}}>
                 Get Your Free Storytelling Guide
               </h4>
-              <p className="text-center mb-6" style={{color: '#2C3E50', opacity: 0.8}}>
+              <p className="text-center mb-6" style={{color: '#1a2949', opacity: 0.8}}>
                 Enter your email to download the guide instantly
               </p>
               <div className="max-w-md mx-auto">
@@ -465,7 +472,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl mb-4" style={{color: '#1a2949', fontWeight: '700'}}>
               Meet the Past 2025 Cohort
             </h2>
-            <p className="text-base" style={{color: '#2C3E50', opacity: 0.8}}>
+            <p className="text-base" style={{color: '#1a2949', opacity: 0.8}}>
               Click on each card to read their testimonial
             </p>
           </motion.div>
@@ -558,16 +565,16 @@ export default function Home() {
                       <h3 className="text-lg mb-2" style={{color: '#1a2949', fontWeight: '700'}}>
                         {storyteller.name}
                       </h3>
-                      <p className="text-sm" style={{color: '#2C3E50', lineHeight: '1.6'}}>
+                      <p className="text-sm" style={{color: '#1a2949', lineHeight: '1.6'}}>
                         {storyteller.bio}
                       </p>
                     </div>
                   </div>
 
                   {/* Back of card */}
-                  <div className="absolute inset-0 rounded-lg shadow-md p-6 flex flex-col justify-center" style={{backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', backgroundColor: '#D6E9F5'}}>
+                  <div className="absolute inset-0 rounded-lg shadow-md p-6 flex flex-col justify-center" style={{backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', backgroundColor: '#ddf3ff'}}>
                     <div className="mb-4 text-4xl text-center" style={{color: '#0067a2'}}>💬</div>
-                    <p className="text-sm italic mb-4" style={{color: '#2C3E50', lineHeight: '1.6'}}>
+                    <p className="text-sm italic mb-4" style={{color: '#1a2949', lineHeight: '1.6'}}>
                       "{storyteller.testimonial}"
                     </p>
                     <p className="text-sm font-semibold text-right" style={{color: '#1a2949'}}>
@@ -593,7 +600,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl mb-4" style={{color: '#1a2949', fontWeight: '700'}}>
               Building Community Through Stories
             </h2>
-            <p className="text-lg max-w-3xl mx-auto" style={{color: '#2C3E50', lineHeight: '1.6', fontWeight: '400'}}>
+            <p className="text-lg max-w-3xl mx-auto" style={{color: '#1a2949', lineHeight: '1.6', fontWeight: '400'}}>
               Watch authentic stories from our Storyteller Collective alumni
             </p>
           </motion.div>
@@ -621,7 +628,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="connect" className="py-20 px-4" style={{backgroundColor: '#ffffff', borderTop: '1px solid #D6E9F5'}}>
+      <section id="connect" className="py-20 px-4" style={{backgroundColor: '#ffffff', borderTop: '1px solid #ddf3ff'}}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -631,7 +638,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl mb-6" style={{color: '#1a2949', fontWeight: '700'}}>
               Ready to Transform Your Story Into Impact?
             </h2>
-            <p className="text-lg mb-12 leading-relaxed" style={{color: '#2C3E50'}}>
+            <p className="text-lg mb-12 leading-relaxed" style={{color: '#1a2949'}}>
               Join a movement where your lived experience becomes expertise, your voice drives change, and your journey inspires transformation.
             </p>
 
@@ -650,14 +657,14 @@ export default function Home() {
               <div className="mt-6">
                 <button
                   className="px-8 py-3 text-base transition-colors rounded-full"
-                  style={{border: '1px solid #1E5F99', color: '#1E5F99', backgroundColor: 'transparent', fontWeight: '400'}}
+                  style={{border: '1px solid #0067a2', color: '#0067a2', backgroundColor: 'transparent', fontWeight: '400'}}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1E5F99';
+                    e.currentTarget.style.backgroundColor = '#0067a2';
                     e.currentTarget.style.color = '#ffffff';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#1E5F99';
+                    e.currentTarget.style.color = '#0067a2';
                   }}
                 >
                   Learn About Foster Greatness

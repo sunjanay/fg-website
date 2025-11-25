@@ -150,9 +150,7 @@ function HeroSection() {
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
-              href="https://www.fostergreatness.co/about"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/about"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
             >
               Learn More
@@ -195,12 +193,12 @@ function HeroSection() {
 function FeaturedCard({ update }: { update: Update }) {
   const config = typeConfig[update.type]
   const Icon = config.icon
+  const isExternal = update.link.startsWith('http')
 
   return (
     <motion.a
       href={update.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
       variants={itemVariants}
       className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 cursor-pointer group h-full hover:shadow-md hover:border-fg-teal/30 transition-all"
     >
@@ -272,12 +270,12 @@ function TestimonialQuote() {
 function UpdateCard({ update }: { update: Update }) {
   const config = typeConfig[update.type]
   const Icon = config.icon
+  const isExternal = update.link.startsWith('http')
 
   return (
     <motion.a
       href={update.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
       variants={itemVariants}
       className="group block bg-white rounded-2xl shadow-sm border border-fg-navy/5 overflow-hidden h-full"
     >
@@ -392,9 +390,7 @@ function NewsletterSection({ newsletters, loading }: { newsletters: Newsletter[]
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-bold text-fg-navy">Latest Newsletters</h3>
         <a
-          href="https://www.fostergreatness.co/newsletter"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/newsletter"
           className="text-sm font-semibold text-fg-teal hover:text-fg-navy transition-colors"
         >
           View All
@@ -472,9 +468,7 @@ function CommunitySection() {
               Foster Greatness is led by people who've lived through the foster system. Whether you need help with housing, want to share your story, or just need to know you're not alone—we've got you.
             </p>
             <a
-              href="https://www.fostergreatness.co/about"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-teal hover:text-white transition-colors"
             >
               About Foster Greatness
@@ -550,7 +544,7 @@ const voiceAmplificationItems = [
     description: 'Host Isabel Stasa interviews FG Community members and advocates, sharing their stories of strength and resilience. New videos weekly!',
     image: '/images/thriver-stories.jpg',
     cta: 'Watch Episodes',
-    link: 'https://www.fostergreatness.co/thriver-stories',
+    link: '/storytellers-collective',
   },
   {
     title: 'Events & Workshops',
@@ -564,7 +558,7 @@ const voiceAmplificationItems = [
     description: 'Stay updated without joining the community. We share all our latest news and updates monthly.',
     image: '/images/newsletter-feature.jpg',
     cta: 'Read Newsletter',
-    link: 'https://www.fostergreatness.co/newsletter',
+    link: '/newsletter',
   },
 ]
 
@@ -988,8 +982,7 @@ function VoiceAmplificationSection() {
           <motion.a
             key={item.title}
             href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(item.link.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
             variants={itemVariants}
             className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-teal/30 transition-all block"
           >
@@ -1043,8 +1036,7 @@ function WhatYoullGetSection() {
           <motion.a
             key={feature.title}
             href={feature.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(feature.link.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
             variants={itemVariants}
             className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-teal/30 transition-all block ${
               feature.featured ? 'sm:col-span-2 lg:col-span-1' : ''
@@ -1076,7 +1068,7 @@ function WhatYoullGetSection() {
 
       <motion.div variants={itemVariants} className="text-center mt-8">
         <a
-          href="https://www.fostergreatness.co/join-our-community"
+          href="https://community.fostergreatness.co"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors"
@@ -1200,12 +1192,12 @@ export default function Home() {
             {otherUpdates.map((update) => {
               const config = typeConfig[update.type]
               const Icon = config.icon
+              const isExternal = update.link.startsWith('http')
               return (
                 <motion.a
                   key={update.id}
                   href={update.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
                   variants={itemVariants}
                   className="block group"
                 >

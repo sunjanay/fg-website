@@ -19,11 +19,11 @@ const config: Config = {
 
         // FG-prefixed colors (for updates page)
         'fg-navy': '#1a2949',
-        'fg-teal': '#0067a2',
+        'fg-teal': '#0067a2',  // Secondary blue color that supplements navy
         'fg-light-blue': '#ddf3ff',
         'fg-orange': '#fa8526',
         'fg-yellow': '#faca2c',
-        'fg-accent-teal': '#00c8b7',
+        'fg-accent-teal': '#00c8b7',  // Actual teal, used as accent only
         'fg-coral': '#ff6f61',
 
         // Neutrals
@@ -31,7 +31,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["Montserrat", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans: ["Poppins", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
       },
     },
   },
