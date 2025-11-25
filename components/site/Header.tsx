@@ -2,13 +2,55 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clear any pending close timeout
+  const clearCloseTimeout = useCallback(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  }, []);
+
+  // Open menu immediately, clear any pending close
+  const handleMenuEnter = useCallback((menu: string) => {
+    clearCloseTimeout();
+    setActiveMenu(menu);
+  }, [clearCloseTimeout]);
+
+  // Delay closing to allow mouse to move to dropdown
+  const handleMenuLeave = useCallback(() => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 150);
+  }, [clearCloseTimeout]);
+
+  // Keep menu open when hovering dropdown
+  const handleDropdownEnter = useCallback(() => {
+    clearCloseTimeout();
+  }, [clearCloseTimeout]);
+
+  // Close menu when leaving dropdown
+  const handleDropdownLeave = useCallback(() => {
+    handleMenuLeave();
+  }, [handleMenuLeave]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,10 +82,10 @@ export default function Header() {
               {/* About Menu */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveMenu('about')}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => handleMenuEnter('about')}
+                onMouseLeave={handleMenuLeave}
               >
-                <button className="px-5 py-2.5 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative group">
+                <button className="px-5 py-4 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative group">
                   About
                   <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-navy to-blue transition-transform duration-300 origin-left ${activeMenu === 'about' ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
@@ -52,10 +94,10 @@ export default function Header() {
               {/* Community Menu */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveMenu('community')}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => handleMenuEnter('community')}
+                onMouseLeave={handleMenuLeave}
               >
-                <button className="px-5 py-2.5 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
+                <button className="px-5 py-4 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
                   Community
                   <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal to-blue transition-transform duration-300 origin-left ${activeMenu === 'community' ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
@@ -64,10 +106,10 @@ export default function Header() {
               {/* Campaigns Menu */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveMenu('campaigns')}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => handleMenuEnter('campaigns')}
+                onMouseLeave={handleMenuLeave}
               >
-                <button className="px-5 py-2.5 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
+                <button className="px-5 py-4 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
                   Campaigns
                   <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange to-yellow transition-transform duration-300 origin-left ${activeMenu === 'campaigns' ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
@@ -128,8 +170,8 @@ export default function Header() {
         {activeMenu && (
           <div
             className="absolute left-0 right-0 top-full bg-white border-t border-gray-100 shadow-2xl animate-slideDown"
-            onMouseEnter={() => setActiveMenu(activeMenu)}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={handleDropdownEnter}
+            onMouseLeave={handleDropdownLeave}
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -149,11 +191,10 @@ export default function Header() {
                     <div className="grid sm:grid-cols-2 gap-6">
                       {[
                         { icon: '📖', title: 'Our Story', desc: 'Discover how lived experience leadership drives our mission to create lifelong belonging', href: '/about', delay: '0ms' },
-                        { icon: '📊', title: 'Impact Report', desc: 'See the measurable difference we are making in foster youth lives nationwide', href: '/impact-report', delay: '100ms' },
-                        { icon: '👥', title: 'Our Team', desc: 'Meet the lived experience leaders building this movement', href: '/team', delay: '200ms' },
-                        { icon: '🤝', title: 'Our Partners', desc: 'Organizations making lifelong community possible', href: '/partnerships', delay: '300ms' }
+                        { icon: '📊', title: 'Impact Report', desc: 'See the measurable difference we are making in foster youth lives nationwide', href: '/impact', delay: '100ms' },
+                        { icon: '🤝', title: 'Our Partners', desc: 'Organizations making lifelong community possible', href: '/partnerships', delay: '200ms' }
                       ].map((item, i) => (
-                        <a
+                        <Link
                           key={i}
                           href={item.href}
                           className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-blue/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
@@ -167,7 +208,7 @@ export default function Header() {
                               <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -200,26 +241,46 @@ export default function Header() {
                     <h3 className="text-3xl font-bold text-navy mb-8 animate-fadeIn">Join Our Community</h3>
                     <div className="grid sm:grid-cols-2 gap-6">
                       {[
-                        { icon: '🌟', title: 'Join Community Circle', desc: 'Connect with 1,100+ current and former foster youth nationwide', href: 'https://community.fostergreatness.co', delay: '0ms' },
-                        { icon: '💫', title: 'Thriver Stories', desc: 'Read inspiring stories of resilience and transformation', href: '/storytellers-collective', delay: '100ms' },
-                        { icon: '🎤', title: 'Storytellers Collective', desc: 'Share your story and guide others in storytelling', href: '/storytellers-collective', delay: '200ms' },
-                        { icon: '📅', title: 'Community Events', desc: 'Gatherings, celebrations, and connection opportunities', href: 'https://community.fostergreatness.co/c/general-events', delay: '300ms' }
+                        { icon: '🌟', title: 'Join Community Circle', desc: 'Connect with 1,100+ current and former foster youth nationwide', href: 'https://community.fostergreatness.co', delay: '0ms', external: true },
+                        { icon: '💫', title: 'Thriver Stories', desc: 'Watch inspiring stories of resilience and transformation', href: '/thriver-stories', delay: '100ms', external: false },
+                        { icon: '🎤', title: 'Storytellers Collective', desc: 'Share your story and guide others in storytelling', href: '/storytellers-collective', delay: '200ms', external: false },
+                        { icon: '📅', title: 'Community Events', desc: 'Gatherings, celebrations, and connection opportunities', href: '/events', delay: '300ms', external: false }
                       ].map((item, i) => (
-                        <Link
-                          key={i}
-                          href={item.href}
-                          className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-teal/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
-                          style={{ animationDelay: item.delay }}
-                        >
-                          <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{item.icon}</div>
-                          <h4 className="text-xl font-bold text-navy group-hover:text-teal mb-2 transition-colors">{item.title}</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-teal">
-                              <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                          </div>
-                        </Link>
+                        item.external ? (
+                          <a
+                            key={i}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-teal/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
+                            style={{ animationDelay: item.delay }}
+                          >
+                            <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{item.icon}</div>
+                            <h4 className="text-xl font-bold text-navy group-hover:text-teal mb-2 transition-colors">{item.title}</h4>
+                            <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-teal">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                              </svg>
+                            </div>
+                          </a>
+                        ) : (
+                          <Link
+                            key={i}
+                            href={item.href}
+                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-teal/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
+                            style={{ animationDelay: item.delay }}
+                          >
+                            <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{item.icon}</div>
+                            <h4 className="text-xl font-bold text-navy group-hover:text-teal mb-2 transition-colors">{item.title}</h4>
+                            <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-teal">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                              </svg>
+                            </div>
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>
@@ -264,7 +325,7 @@ export default function Header() {
                         icon: '🏠',
                         title: 'Gingerbread House Contest',
                         desc: 'Support our community gingerbread building event and help create joyful memories',
-                        href: '/gingerbread-contest',
+                        href: '/gingerbread',
                         gradient: 'from-orange via-yellow to-orange',
                         delay: '100ms'
                       },
@@ -315,7 +376,7 @@ export default function Header() {
                 <div className="font-bold text-navy mb-3">Campaigns</div>
                 <div className="ml-4 space-y-2">
                   <Link href="/holiday-gift-drive-2025" className="block text-gray-600 hover:text-navy text-sm py-2">🎄 Holiday Gift Drive</Link>
-                  <Link href="/gingerbread-contest" className="block text-gray-600 hover:text-navy text-sm py-2">🏠 Gingerbread Contest</Link>
+                  <Link href="/gingerbread" className="block text-gray-600 hover:text-navy text-sm py-2">🏠 Gingerbread Contest</Link>
                   <Link href="/meal-kit-sponsors" className="block text-gray-600 hover:text-navy text-sm py-2">🦃 Meal Kit Sponsors</Link>
                 </div>
               </div>
