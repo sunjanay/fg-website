@@ -42,14 +42,14 @@
       "image": "/images/storyteller-guide.webp"
     },
     {
-      "id": "meal-kit-sponsors",
-      "type": "page",
-      "title": "Meal Kit Sponsorship Program",
-      "description": "Partner with us to create belonging for 75 foster youth families this Thanksgiving through meal kits, cookbooks, and virtual cooking events.",
+      "id": "gingerbread-kits",
+      "type": "donate",
+      "title": "Gingerbread Kits for Our Community",
+      "description": "Help foster youth experience holiday joy through gingerbread kit sponsorships. Each $60 kit includes supplies, a gift card, and access to our live virtual building event.",
       "date": "2025-11-18",
-      "link": "/meal-kit-sponsors",
-      "linkText": "Learn About Partnership",
-      "image": "/images/gingerbread-1.jpg"
+      "link": "/gingerbread",
+      "linkText": "Sponsor a Kit",
+      "image": "/images/giving-tuesday-banner.png"
     }
   ]
 }

@@ -55,21 +55,21 @@ export default function GingerbreadPage() {
       icon: Gift,
       title: "Complete Gingerbread Kit",
       description: "Pre-assembled gingerbread house with icing, candies, and decorations delivered to each member's door.",
-      color: "from-fg-teal to-fg-accent-teal",
+      color: "from-fg-navy to-fg-blue",
       delay: 0.1
     },
     {
       icon: Sparkles,
       title: "Bonus Gift Card",
       description: "Gift card for members to purchase extra decorations and supplies to make their creation uniquely theirs.",
-      color: "from-fg-navy to-fg-teal",
+      color: "from-fg-navy to-fg-blue",
       delay: 0.2
     },
     {
       icon: Users,
       title: "Live Virtual Event",
       description: "Community members connect at 3PM PST for a guided building session, with prizes for the most creative designs.",
-      color: "from-fg-accent-teal to-fg-teal",
+      color: "from-fg-accent-teal to-fg-blue",
       delay: 0.3
     }
   ], []);
@@ -100,7 +100,7 @@ export default function GingerbreadPage() {
       description: "Pre-assembled house, icing, candies, decorations & shipping",
       icon: Gift,
       delay: 0.1,
-      color: "from-fg-teal to-fg-accent-teal"
+      color: "from-fg-navy to-fg-blue"
     },
     {
       amount: 20,
@@ -108,7 +108,7 @@ export default function GingerbreadPage() {
       description: "Additional supplies so members can personalize their creations",
       icon: Sparkles,
       delay: 0.2,
-      color: "from-fg-accent-teal to-fg-teal"
+      color: "from-fg-accent-teal to-fg-blue"
     }
   ], []);
 
@@ -128,7 +128,7 @@ export default function GingerbreadPage() {
             widget.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }}
-        className="fixed bottom-6 right-6 bg-fg-teal text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl z-50 font-bold text-base md:text-lg transition-all hover:scale-105"
+        className="fixed bottom-6 right-6 bg-fg-navy text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl z-50 font-bold text-base md:text-lg transition-all hover:scale-105"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 100 }}
@@ -158,7 +158,7 @@ export default function GingerbreadPage() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="inline-flex items-center gap-2 bg-fg-light-blue px-4 py-2 rounded-full mb-6"
                 >
-                  <Heart className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                  <Heart className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                   <span className="text-sm font-semibold text-fg-navy">December 19th, 2025 &bull; 3PM PST</span>
                 </motion.div>
 
@@ -204,7 +204,7 @@ export default function GingerbreadPage() {
                       }
                     }}
                     aria-label="Donate to fund member gingerbread kits and virtual event"
-                    className="inline-flex items-center gap-2 bg-fg-teal text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90 cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-fg-navy text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90 cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -242,7 +242,7 @@ export default function GingerbreadPage() {
                   <Gift className="w-6 h-6 text-white" />
                 </motion.div>
                 <motion.div
-                  className="absolute -bottom-4 -left-4 w-20 h-20 bg-fg-teal rounded-full border-4 border-white shadow-lg flex items-center justify-center text-3xl"
+                  className="absolute -bottom-4 -left-4 w-20 h-20 bg-fg-navy rounded-full border-4 border-white shadow-lg flex items-center justify-center text-3xl"
                   animate={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                 >
@@ -335,7 +335,7 @@ export default function GingerbreadPage() {
                   widget.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              className="inline-flex items-center gap-2 bg-fg-teal text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90"
+              className="inline-flex items-center gap-2 bg-fg-navy text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -397,19 +397,19 @@ export default function GingerbreadPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="relative bg-gradient-to-br from-fg-light-blue/30 to-white rounded-3xl p-10 md:p-12 shadow-xl max-w-5xl mx-auto border-2 border-fg-teal/20 overflow-hidden"
+            className="relative bg-gradient-to-br from-fg-light-blue/30 to-white rounded-3xl p-10 md:p-12 shadow-xl max-w-5xl mx-auto border-2 border-fg-blue/20 overflow-hidden"
           >
             {/* Decorative elements */}
             <div className="absolute -right-8 -top-8 text-8xl opacity-10 rotate-12 pointer-events-none">
-              <Gift className="w-32 h-32 text-fg-teal" />
+              <Gift className="w-32 h-32 text-fg-blue" />
             </div>
-            <div className="absolute top-8 left-8 text-6xl text-fg-teal/20 font-serif leading-none">&quot;</div>
+            <div className="absolute top-8 left-8 text-6xl text-fg-blue/20 font-serif leading-none">&quot;</div>
 
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Profile Badge */}
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-teal to-fg-accent-teal flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                     TR
                   </div>
                 </div>
@@ -417,7 +417,7 @@ export default function GingerbreadPage() {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 bg-fg-light-blue px-3 py-1 rounded-full mb-4">
-                    <Heart className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                    <Heart className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                     <span className="text-xs font-semibold text-fg-navy">From last year&apos;s event</span>
                   </div>
 
@@ -475,7 +475,7 @@ export default function GingerbreadPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-fg-navy/90 via-fg-navy/40 to-transparent z-10" />
             <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
               <div className="flex items-center gap-3 mb-3">
-                <div className="inline-flex items-center gap-2 bg-fg-teal px-4 py-2 rounded-full shadow-lg">
+                <div className="inline-flex items-center gap-2 bg-fg-navy px-4 py-2 rounded-full shadow-lg">
                   <Gift className="w-5 h-5 text-white" aria-hidden="true" />
                   <span className="font-bold text-white">What&apos;s Included</span>
                 </div>
@@ -506,7 +506,7 @@ export default function GingerbreadPage() {
                   <AnimatedCounter value={item.amount} />
                 </div>
 
-                <p className="text-fg-teal font-bold text-xl mb-3">
+                <p className="text-fg-blue font-bold text-xl mb-3">
                   {item.title}
                 </p>
 
@@ -524,15 +524,15 @@ export default function GingerbreadPage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="col-span-full md:col-span-1 relative bg-white rounded-2xl p-6 border-2 border-gray-100 shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-fg-teal to-fg-accent-teal mb-4 shadow-sm">
+              <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-fg-navy to-fg-blue mb-4 shadow-sm">
                 <CheckCircle className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
 
-              <div className="text-5xl md:text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-fg-teal to-fg-accent-teal">
+              <div className="text-5xl md:text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-fg-navy to-fg-blue">
                 <AnimatedCounter value={60} duration={2.5} />
               </div>
 
-              <p className="text-fg-teal font-bold text-xl mb-3">
+              <p className="text-fg-blue font-bold text-xl mb-3">
                 Total Per Member
               </p>
 
@@ -554,13 +554,13 @@ export default function GingerbreadPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="relative bg-gradient-to-br from-fg-teal/5 to-fg-navy/5 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden border-2 border-fg-teal/20"
+              className="relative bg-gradient-to-br from-fg-navy/5 to-fg-navy/5 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden border-2 border-fg-blue/20"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-fg-accent-teal/15 rounded-full blur-3xl" />
 
               <div className="relative z-10">
-                <div className="inline-flex p-4 bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-2xl mb-6">
-                  <Heart className="w-8 h-8 text-fg-teal" aria-hidden="true" />
+                <div className="inline-flex p-4 bg-gradient-to-br from-fg-navy/10 to-fg-navy/10 rounded-2xl mb-6">
+                  <Heart className="w-8 h-8 text-fg-blue" aria-hidden="true" />
                 </div>
 
                 <h3 className="text-3xl font-bold mb-6 text-fg-navy">Community Impact</h3>
@@ -575,7 +575,7 @@ export default function GingerbreadPage() {
                       transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle className="w-6 h-6 text-fg-teal flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <CheckCircle className="w-6 h-6 text-fg-blue flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="text-gray-700 leading-relaxed">{item}</span>
                     </motion.li>
                   ))}

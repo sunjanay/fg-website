@@ -128,7 +128,7 @@ export default function OneSimpleWishCaseStudy() {
         >
           <Link
             href="/partnerships"
-            className="inline-flex items-center gap-2 text-fg-navy/60 hover:text-fg-teal transition-colors"
+            className="inline-flex items-center gap-2 text-fg-navy/60 hover:text-fg-blue transition-colors"
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             <span className="font-semibold">Back to Partnerships</span>
@@ -158,7 +158,7 @@ export default function OneSimpleWishCaseStudy() {
                   href="https://community.fostergreatness.co/c/resource-specialist"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-orange text-white font-semibold rounded-full hover:bg-fg-navy transition-colors shadow-lg shadow-fg-orange/20"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
                 >
                   <Heart className="w-4 h-4" aria-hidden="true" />
                   Submit a Wish Request
@@ -188,7 +188,7 @@ export default function OneSimpleWishCaseStudy() {
           variants={containerVariants}
           className="mb-10 md:mb-12"
         >
-          <div className="bg-gradient-to-br from-fg-orange to-fg-yellow rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-br from-fg-navy to-fg-blue rounded-3xl p-8 md:p-12 text-white">
             <motion.div variants={itemVariants} className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Partnership Impact</h2>
               <p className="text-white/90 max-w-2xl mx-auto">
@@ -311,7 +311,7 @@ export default function OneSimpleWishCaseStudy() {
                 className="relative mb-6 last:mb-0"
               >
                 <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-fg-orange to-fg-yellow text-white font-bold text-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue text-white font-bold text-xl flex items-center justify-center">
                     {step.step}
                   </div>
                   <div className="flex-1 bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5">
@@ -320,7 +320,7 @@ export default function OneSimpleWishCaseStudy() {
                   </div>
                 </div>
                 {i < howItWorks.length - 1 && (
-                  <div className="ml-8 h-8 w-0.5 bg-fg-orange/30"></div>
+                  <div className="ml-8 h-8 w-0.5 bg-fg-blue/30"></div>
                 )}
               </motion.div>
             ))}
@@ -352,19 +352,19 @@ export default function OneSimpleWishCaseStudy() {
                 className="bg-white rounded-3xl p-8 shadow-sm border border-fg-navy/5"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-orange to-fg-yellow flex items-center justify-center text-white text-2xl font-bold">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue flex items-center justify-center text-white text-2xl font-bold">
                     {story.initial}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-fg-navy">{story.name}</h3>
-                    <p className="text-fg-orange font-semibold text-sm">{story.wish}</p>
+                    <p className="text-fg-blue font-semibold text-sm">{story.wish}</p>
                   </div>
                 </div>
                 <blockquote className="text-fg-navy/80 leading-relaxed italic mb-4">
                   "{story.quote}"
                 </blockquote>
                 <div className="flex items-center gap-2 text-sm text-fg-navy/50">
-                  <CheckCircle2 className="w-4 h-4 text-fg-orange flex-shrink-0" aria-hidden="true" />
+                  <CheckCircle2 className="w-4 h-4 text-fg-blue flex-shrink-0" aria-hidden="true" />
                   <span>{story.outcome}</span>
                 </div>
               </motion.div>
@@ -382,7 +382,7 @@ export default function OneSimpleWishCaseStudy() {
         >
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-fg-orange/5 to-fg-yellow/5 rounded-3xl p-8 md:p-12 text-center border border-fg-orange/20"
+            className="bg-gradient-to-br from-fg-navy/5 to-fg-blue/5 rounded-3xl p-8 md:p-12 text-center border border-fg-navy/20"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-4">
               Need Something to Move Forward?
@@ -395,7 +395,7 @@ export default function OneSimpleWishCaseStudy() {
                 href="https://community.fostergreatness.co/c/resource-specialist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-orange text-white font-semibold rounded-full hover:bg-fg-navy transition-colors shadow-lg shadow-fg-orange/20"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
               >
                 <Heart className="w-4 h-4" aria-hidden="true" />
                 Talk to Resource Specialist
@@ -404,7 +404,7 @@ export default function OneSimpleWishCaseStudy() {
                 href="https://www.onesimplewish.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-orange transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-blue transition-colors"
               >
                 Learn About One Simple Wish
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />

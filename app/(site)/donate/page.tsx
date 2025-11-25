@@ -15,7 +15,7 @@ const campaigns = [
     image: '/images/holiday-gift-tree.png',
     href: '/holiday-gift-drive-2025',
     icon: Gift,
-    color: 'from-fg-teal to-fg-navy',
+    color: 'from-fg-navy to-fg-blue',
   },
   {
     title: 'Gingerbread House Contest',
@@ -23,7 +23,7 @@ const campaigns = [
     image: '/images/gingerbread-1.jpg',
     href: '/gingerbread',
     icon: Sparkles,
-    color: 'from-fg-orange to-fg-yellow',
+    color: 'from-fg-navy to-fg-blue',
   },
   {
     title: 'Meal Kit Sponsors',
@@ -31,7 +31,7 @@ const campaigns = [
     image: '/images/community-feature.png',
     href: '/meal-kit-sponsors',
     icon: Users,
-    color: 'from-fg-navy to-fg-teal',
+    color: 'from-fg-navy to-fg-blue',
   },
 ];
 
@@ -53,13 +53,13 @@ export default function DonatePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-fg-navy via-fg-navy to-fg-teal py-20 px-4 overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-teal/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <section className="relative bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue py-20 px-4 overflow-hidden">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-blue/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-fg-orange/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Heart className="w-4 h-4 text-fg-teal" />
+            <Heart className="w-4 h-4 text-fg-blue" />
             <span className="text-sm font-semibold text-white/90">100% goes directly to programs</span>
           </div>
 
@@ -106,12 +106,12 @@ export default function DonatePage() {
                     <div className={`p-2 rounded-lg bg-gradient-to-br ${campaign.color}`}>
                       <campaign.icon className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-fg-navy group-hover:text-fg-teal transition-colors">
+                    <h3 className="text-xl font-bold text-fg-navy group-hover:text-fg-blue transition-colors">
                       {campaign.title}
                     </h3>
                   </div>
                   <p className="text-gray-600 mb-4">{campaign.description}</p>
-                  <span className="inline-flex items-center gap-2 text-fg-teal font-semibold group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-fg-blue font-semibold group-hover:gap-3 transition-all">
                     Support This Campaign
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -127,8 +127,8 @@ export default function DonatePage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
             <div className="text-center mb-8">
-              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 mb-6">
-                <Heart className="w-10 h-10 text-fg-teal" />
+              <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-fg-blue/10 to-fg-navy/10 mb-6">
+                <Heart className="w-10 h-10 text-fg-blue" />
               </div>
               <h2 className="text-3xl font-bold text-fg-navy mb-4">
                 Support Our Mission
@@ -143,7 +143,7 @@ export default function DonatePage() {
                 href="https://donate.stripe.com/8wM3fO2Xn5Ht1tm3cc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-fg-teal to-fg-navy text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-fg-navy to-fg-blue text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 <Heart className="w-5 h-5" />
                 Make a Donation
@@ -152,7 +152,7 @@ export default function DonatePage() {
 
             <p className="text-center text-sm text-gray-500">
               Questions? Contact us at{' '}
-              <a href="mailto:jordanb@doinggoodworks.com" className="text-fg-teal hover:underline">
+              <a href="mailto:jordanb@doinggoodworks.com" className="text-fg-blue hover:underline">
                 jordanb@doinggoodworks.com
               </a>
             </p>
@@ -168,7 +168,7 @@ export default function DonatePage() {
           <div className="grid grid-cols-3 gap-8 mb-8">
             {impactStats.map((stat) => (
               <div key={stat.label}>
-                <div className="text-4xl md:text-5xl font-bold text-fg-teal mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-fg-blue mb-2">{stat.number}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -176,7 +176,7 @@ export default function DonatePage() {
 
           <Link
             href="/impact"
-            className="inline-flex items-center gap-2 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
+            className="inline-flex items-center gap-2 text-fg-navy font-semibold hover:text-fg-blue transition-colors"
           >
             View Full Impact Report
             <ArrowRight className="w-4 h-4" />

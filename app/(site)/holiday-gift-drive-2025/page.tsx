@@ -27,7 +27,7 @@ export default function GiftDrivePage() {
       <section className="relative bg-gradient-to-b from-fg-light-blue to-white py-20 px-4 overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-10 left-10 opacity-20">
-          <Sparkles className="w-20 h-20 text-fg-teal" />
+          <Sparkles className="w-20 h-20 text-fg-blue" />
         </div>
         <div className="absolute bottom-10 right-10 opacity-20">
           <Sparkles className="w-16 h-16 text-fg-orange" />
@@ -36,7 +36,7 @@ export default function GiftDrivePage() {
         <div className="max-w-6xl mx-auto text-center relative z-10">
           {/* Event Badge */}
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md mb-8">
-            <Sparkles className="w-5 h-5 text-fg-teal" />
+            <Sparkles className="w-5 h-5 text-fg-blue" />
             <span className="text-sm font-semibold text-fg-navy">
               Holiday Gift Drive 2025
             </span>
@@ -45,7 +45,7 @@ export default function GiftDrivePage() {
           {/* Headline */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-fg-navy mb-6 leading-tight">
             Help Make the Holidays{' '}
-            <span className="text-fg-teal">Special</span>
+            <span className="text-fg-blue">Special</span>
             <br />
             for Our Community
           </h1>
@@ -56,7 +56,7 @@ export default function GiftDrivePage() {
           </p>
 
           {/* Instructions */}
-          <div className="inline-block bg-white px-8 py-4 rounded-xl shadow-lg border-2 border-fg-teal">
+          <div className="inline-block bg-white px-8 py-4 rounded-xl shadow-lg border-2 border-fg-blue">
             <p className="text-lg font-semibold text-fg-navy">
               Click any ornament to see gift details and sponsor a community member
             </p>
@@ -87,7 +87,7 @@ export default function GiftDrivePage() {
             Questions? Contact us at{' '}
             <a
               href="mailto:jordanb@doinggoodworks.com"
-              className="text-fg-teal font-semibold hover:underline"
+              className="text-fg-blue font-semibold hover:underline"
             >
               jordanb@doinggoodworks.com
             </a>

@@ -27,12 +27,12 @@ export default function BrowseGifts() {
           className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 bg-fg-light-blue/50 px-3 py-1.5 rounded-full mb-4">
-            <Gift className="w-3.5 h-3.5 text-fg-teal" />
+            <Gift className="w-3.5 h-3.5 text-fg-blue" />
             <span className="text-xs font-semibold text-fg-navy">All Community Wishes</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-fg-navy mb-3 tracking-tight">
             Browse All{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fg-teal to-fg-accent-teal">Gift Wishes</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fg-navy to-fg-blue">Gift Wishes</span>
           </h2>
           <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Prefer to see everything at once? Here&apos;s the full list of gift wishes from our community members.
@@ -42,7 +42,7 @@ export default function BrowseGifts() {
         {/* Gift Cards Grid */}
         {loading ? (
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fg-teal mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fg-blue mx-auto mb-4"></div>
             <p className="text-gray-600">Loading gifts...</p>
           </div>
         ) : (

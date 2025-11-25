@@ -43,7 +43,7 @@ export default function Ornament({ recipient, onClick }: OrnamentProps) {
   return (
     <motion.button
       onClick={onClick}
-      className="relative cursor-pointer group focus:outline-none focus:ring-4 focus:ring-fg-teal focus:ring-offset-2 rounded-full"
+      className="relative cursor-pointer group focus:outline-none focus:ring-4 focus:ring-fg-blue focus:ring-offset-2 rounded-full"
       style={{
         width: '120px',
         height: '140px'

@@ -99,7 +99,7 @@ export default function Header() {
               >
                 <button className="px-5 py-4 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
                   Community
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal to-blue transition-transform duration-300 origin-left ${activeMenu === 'community' ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-navy to-blue transition-transform duration-300 origin-left ${activeMenu === 'community' ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               </div>
 
@@ -111,7 +111,7 @@ export default function Header() {
               >
                 <button className="px-5 py-4 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105 relative">
                   Campaigns
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange to-yellow transition-transform duration-300 origin-left ${activeMenu === 'campaigns' ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-navy to-blue transition-transform duration-300 origin-left ${activeMenu === 'campaigns' ? 'scale-x-100' : 'scale-x-0'}`}></span>
                 </button>
               </div>
 
@@ -137,7 +137,7 @@ export default function Header() {
               {/* Donate Button */}
               <Link
                 href="/donate"
-                className="relative overflow-hidden bg-gradient-to-r from-orange to-yellow text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                className="relative overflow-hidden bg-gradient-to-r from-navy to-blue text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Donate
@@ -145,7 +145,7 @@ export default function Header() {
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow to-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue to-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
 
               {/* Mobile Menu Button */}
@@ -214,7 +214,7 @@ export default function Header() {
                   </div>
 
                   {/* Featured Section */}
-                  <div className="relative overflow-hidden bg-gradient-to-br from-navy via-blue to-teal rounded-2xl p-8 text-white shadow-2xl animate-fadeIn" style={{ animationDelay: '100ms' }}>
+                  <div className="relative overflow-hidden bg-gradient-to-br from-navy via-navy to-blue rounded-2xl p-8 text-white shadow-2xl animate-fadeIn" style={{ animationDelay: '100ms' }}>
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
                     <div className="relative z-10">
                       <div className="text-6xl mb-6">❤️</div>
@@ -252,14 +252,14 @@ export default function Header() {
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-teal/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
+                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-blue/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
                             style={{ animationDelay: item.delay }}
                           >
                             <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{item.icon}</div>
-                            <h4 className="text-xl font-bold text-navy group-hover:text-teal mb-2 transition-colors">{item.title}</h4>
+                            <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">{item.title}</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-teal">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-blue">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                               </svg>
                             </div>
@@ -268,14 +268,14 @@ export default function Header() {
                           <Link
                             key={i}
                             href={item.href}
-                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-teal/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
+                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white to-light-blue/30 hover:from-light-blue hover:to-blue/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-fadeIn"
                             style={{ animationDelay: item.delay }}
                           >
                             <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{item.icon}</div>
-                            <h4 className="text-xl font-bold text-navy group-hover:text-teal mb-2 transition-colors">{item.title}</h4>
+                            <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">{item.title}</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-teal">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-blue">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                               </svg>
                             </div>
@@ -285,7 +285,7 @@ export default function Header() {
                     </div>
                   </div>
 
-                  <div className="relative overflow-hidden bg-gradient-to-br from-teal via-blue to-navy rounded-2xl p-8 text-white shadow-2xl animate-fadeIn" style={{ animationDelay: '100ms' }}>
+                  <div className="relative overflow-hidden bg-gradient-to-br from-navy via-blue to-navy rounded-2xl p-8 text-white shadow-2xl animate-fadeIn" style={{ animationDelay: '100ms' }}>
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
                     <div className="relative z-10">
                       <div className="text-6xl mb-6">🏡</div>
@@ -318,7 +318,7 @@ export default function Header() {
                         title: 'Holiday Gift Drive 2025',
                         desc: 'Help provide gifts to foster youth this holiday season through our interactive giving tree',
                         href: '/holiday-gift-drive-2025',
-                        gradient: 'from-navy via-blue to-teal',
+                        gradient: 'from-navy via-navy to-blue',
                         delay: '0ms'
                       },
                       {
@@ -326,7 +326,7 @@ export default function Header() {
                         title: 'Gingerbread House Contest',
                         desc: 'Support our community gingerbread building event and help create joyful memories',
                         href: '/gingerbread',
-                        gradient: 'from-orange via-yellow to-orange',
+                        gradient: 'from-navy via-blue to-navy',
                         delay: '100ms'
                       },
                       {
@@ -334,7 +334,7 @@ export default function Header() {
                         title: 'Meal Kit Sponsors',
                         desc: 'Partner with us to provide Thanksgiving meal kits to foster families',
                         href: '/meal-kit-sponsors',
-                        gradient: 'from-teal via-blue to-navy',
+                        gradient: 'from-navy via-blue to-navy',
                         delay: '200ms'
                       }
                     ].map((campaign, i) => (

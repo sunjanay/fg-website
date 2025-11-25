@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Package, BookOpen, Users, Heart, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import ContactSection from '@/components/site/ContactSection';
 
 export default function MealKitSponsorsPage() {
   return (
@@ -24,15 +25,15 @@ export default function MealKitSponsorsPage() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fg-navy mb-6 leading-tight">
               Creating Belonging for 75 Foster Youth Families{' '}
-              <span className="text-fg-teal">This Thanksgiving</span>
+              <span className="text-fg-blue">This Thanksgiving</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
               Join us in transforming isolation into community through a live, virtual cooking
               experience that connects families nationwide.
             </p>
             <motion.a
-              href="mailto:jordanb@doinggoodworks.com"
-              className="inline-flex items-center gap-2 bg-fg-teal text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-fg-navy text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -67,13 +68,13 @@ export default function MealKitSponsorsPage() {
                 icon: Package,
                 title: 'Complete Meal Kit',
                 description: 'Fresh, quality ingredients delivered to their door — enough for a full Thanksgiving meal plus additional days of nutritious eating',
-                color: 'from-fg-teal to-fg-accent-teal',
+                color: 'from-fg-navy to-fg-blue',
               },
               {
                 icon: BookOpen,
                 title: 'Foster Greatness Cookbook',
                 description: 'A keepsake cookbook with accessible recipes and cooking fundamentals — building confidence and independence in the kitchen for years to come',
-                color: 'from-fg-yellow to-fg-orange',
+                color: 'from-fg-navy to-fg-blue',
               },
               {
                 icon: Users,
@@ -149,7 +150,7 @@ export default function MealKitSponsorsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-2xl p-8 border-2 border-fg-teal/20"
+              className="bg-gradient-to-br from-fg-blue/10 to-fg-navy/10 rounded-2xl p-8 border-2 border-fg-blue/20"
             >
               <h3 className="text-2xl font-bold text-fg-navy mb-4">Our Solution</h3>
               <ul className="space-y-4">
@@ -160,7 +161,7 @@ export default function MealKitSponsorsPage() {
                   'Foster belonging through shared experiences',
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-fg-teal flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-5 h-5 text-fg-blue flex-shrink-0 mt-1" />
                     <span className="text-gray-700 font-medium">{item}</span>
                   </li>
                 ))}
@@ -170,42 +171,16 @@ export default function MealKitSponsorsPage() {
         </div>
       </section>
 
-      {/* Partnership CTA */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-fg-navy mb-6">
-              Become a Meal Kit Sponsor
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Your partnership creates belonging for foster youth families during the holidays and beyond.
-              Connect with us to learn about sponsorship opportunities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="mailto:jordanb@doinggoodworks.com"
-                className="inline-flex items-center gap-2 bg-fg-teal text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Heart className="w-5 h-5" />
-                Contact Us to Partner
-              </motion.a>
-              <motion.a
-                href="/"
-                className="inline-flex items-center gap-2 bg-white text-fg-navy border-2 border-fg-navy px-10 py-4 rounded-full font-bold text-lg hover:bg-fg-navy hover:text-white transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More About Foster Greatness
-              </motion.a>
-            </div>
-          </motion.div>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 scroll-mt-24">
+        <div className="max-w-6xl mx-auto">
+          <ContactSection
+            title="Become a Meal Kit Sponsor"
+            subtitle="Partner With Us"
+            description="Your partnership creates belonging for foster youth families during the holidays and beyond. Fill out the form to learn about sponsorship opportunities and how you can make a difference."
+            email="jordanb@doinggoodworks.com"
+            showCommunityButton={false}
+          />
         </div>
       </section>
     </main>

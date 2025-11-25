@@ -117,7 +117,7 @@ export default function StaffMarkCaseStudy() {
         >
           <Link
             href="/partnerships"
-            className="inline-flex items-center gap-2 text-fg-navy/60 hover:text-fg-teal transition-colors"
+            className="inline-flex items-center gap-2 text-fg-navy/60 hover:text-fg-blue transition-colors"
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             <span className="font-semibold">Back to Partnerships</span>
@@ -133,7 +133,7 @@ export default function StaffMarkCaseStudy() {
         >
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div variants={itemVariants}>
-              <div className="inline-block px-3 py-1 bg-fg-teal/10 text-fg-teal text-sm font-semibold rounded-full mb-4">
+              <div className="inline-block px-3 py-1 bg-fg-blue/10 text-fg-blue text-sm font-semibold rounded-full mb-4">
                 Partnership Case Study
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fg-navy mb-6 leading-[1.1] tracking-tight">
@@ -147,7 +147,7 @@ export default function StaffMarkCaseStudy() {
                   href="https://community.fostergreatness.co/c/employment"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors shadow-lg shadow-fg-navy/20"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
                 >
                   Access Employment Support
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -177,7 +177,7 @@ export default function StaffMarkCaseStudy() {
           variants={containerVariants}
           className="mb-10 md:mb-12"
         >
-          <div className="bg-gradient-to-br from-fg-navy to-fg-teal rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-br from-fg-navy to-fg-blue rounded-3xl p-8 md:p-12 text-white">
             <motion.div variants={itemVariants} className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Partnership Impact</h2>
               <p className="text-white/80 max-w-2xl mx-auto">
@@ -224,10 +224,10 @@ export default function StaffMarkCaseStudy() {
                 <motion.div
                   key={feature.title}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-fg-teal/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-fg-teal" aria-hidden="true" />
+                  <div className="w-12 h-12 rounded-lg bg-fg-blue/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-fg-blue" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-bold text-fg-navy mb-2">{feature.title}</h3>
                   <p className="text-sm text-fg-navy/70 leading-relaxed">{feature.description}</p>
@@ -262,7 +262,7 @@ export default function StaffMarkCaseStudy() {
                 className="relative mb-6 last:mb-0"
               >
                 <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-teal text-white font-bold text-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue text-white font-bold text-xl flex items-center justify-center">
                     {step.step}
                   </div>
                   <div className="flex-1 bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5">
@@ -271,7 +271,7 @@ export default function StaffMarkCaseStudy() {
                   </div>
                 </div>
                 {i < howItWorks.length - 1 && (
-                  <div className="ml-8 h-8 w-0.5 bg-fg-teal/30"></div>
+                  <div className="ml-8 h-8 w-0.5 bg-fg-blue/30"></div>
                 )}
               </motion.div>
             ))}
@@ -292,7 +292,7 @@ export default function StaffMarkCaseStudy() {
           >
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-teal to-fg-navy flex items-center justify-center text-white text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue flex items-center justify-center text-white text-2xl font-bold">
                   M
                 </div>
                 <div>
@@ -304,7 +304,7 @@ export default function StaffMarkCaseStudy() {
                 "Through Foster Greatness and StaffMark, I discovered a renewed sense of purpose, which has fueled personal growth and boosted my professional confidence. The 1:1 coaching helped me realize I had skills I didn't even know employers valued. Now I'm not just employed—I'm building a real career."
               </blockquote>
               <div className="flex items-center gap-2 text-sm text-fg-navy/50">
-                <CheckCircle2 className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                <CheckCircle2 className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                 <span>Placed in full-time position with benefits and growth opportunities</span>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function StaffMarkCaseStudy() {
         >
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-fg-teal/5 to-fg-navy/5 rounded-3xl p-8 md:p-12 text-center border border-fg-teal/20"
+            className="bg-gradient-to-br from-fg-blue/5 to-fg-navy/5 rounded-3xl p-8 md:p-12 text-center border border-fg-blue/20"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-4">
               Ready to Start Your Career Journey?
@@ -334,7 +334,7 @@ export default function StaffMarkCaseStudy() {
                 href="https://community.fostergreatness.co/c/employment"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors shadow-lg shadow-fg-navy/20"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
               >
                 <Briefcase className="w-4 h-4" aria-hidden="true" />
                 Explore Employment Opportunities
@@ -343,7 +343,7 @@ export default function StaffMarkCaseStudy() {
                 href="https://community.fostergreatness.co/c/resource-specialist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-blue transition-colors"
               >
                 Contact Resource Specialist
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />

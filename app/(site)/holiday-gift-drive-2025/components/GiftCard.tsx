@@ -18,17 +18,17 @@ export default function GiftCard({ recipient, index, onClick }: GiftCardProps) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
       onClick={onClick}
-      className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-fg-teal/30 flex flex-col h-full cursor-pointer"
+      className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-fg-blue/30 flex flex-col h-full cursor-pointer"
     >
       {/* Card Header */}
       <div className="p-4 pb-3">
         <div className="flex items-start justify-between gap-2 mb-3">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-fg-light-blue rounded-lg group-hover:bg-fg-teal/10 transition-colors">
-              <Gift className="w-4 h-4 text-fg-teal" />
+            <div className="p-2 bg-fg-light-blue rounded-lg group-hover:bg-fg-navy/10 transition-colors">
+              <Gift className="w-4 h-4 text-fg-blue" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-fg-navy group-hover:text-fg-teal transition-colors">
+              <h3 className="text-lg font-bold text-fg-navy group-hover:text-fg-blue transition-colors">
                 {recipient.name}
                 {recipient.age && (
                   <span className="text-gray-500 text-sm ml-1.5 font-normal">
@@ -38,7 +38,7 @@ export default function GiftCard({ recipient, index, onClick }: GiftCardProps) {
               </h3>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-fg-teal to-fg-accent-teal text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">
+          <div className="bg-gradient-to-r from-fg-navy to-fg-blue text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap shadow-sm">
             ${recipient.giftPrice}
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function GiftCard({ recipient, index, onClick }: GiftCardProps) {
         ) : (
           <button
             onClick={onClick}
-            className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-fg-teal to-fg-accent-teal text-white px-4 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
+            className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-fg-navy to-fg-blue text-white px-4 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
           >
             <ShoppingCart className="w-3.5 h-3.5" />
             <span>Sponsor Gift - ${recipient.giftPrice}</span>

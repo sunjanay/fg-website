@@ -114,7 +114,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-fg-teal z-10"
+                className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-fg-blue z-10"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5 text-gray-700" />
@@ -125,7 +125,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-fg-light-blue rounded-full">
-                    <Gift className="w-6 h-6 text-fg-teal" />
+                    <Gift className="w-6 h-6 text-fg-blue" />
                   </div>
                   <div>
                     <h2
@@ -153,7 +153,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                 </div>
 
                 {/* Gift Details */}
-                <div className="bg-gradient-to-br from-fg-light-blue/30 to-white rounded-2xl p-6 mb-6 border border-fg-teal/20">
+                <div className="bg-gradient-to-br from-fg-light-blue/30 to-white rounded-2xl p-6 mb-6 border border-fg-blue/20">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-fg-navy mb-2">
@@ -167,7 +167,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
 
                   {/* Price */}
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fg-teal to-fg-accent-teal">
+                    <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fg-navy to-fg-blue">
                       ${recipient.giftPrice}
                     </span>
                   </div>
@@ -192,7 +192,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                             type="checkbox"
                             checked={coverFee}
                             onChange={(e) => setCoverFee(e.target.checked)}
-                            className="mt-1 w-4 h-4 text-fg-teal border-gray-300 rounded focus:ring-fg-teal"
+                            className="mt-1 w-4 h-4 text-fg-blue border-gray-300 rounded focus:ring-fg-blue"
                           />
                           <span className="text-sm text-gray-700">
                             Add ${fee.toFixed(2)} to cover processing fee
@@ -208,7 +208,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                             type="checkbox"
                             checked={shareEmail}
                             onChange={(e) => setShareEmail(e.target.checked)}
-                            className="mt-1 w-4 h-4 text-fg-teal border-gray-300 rounded focus:ring-fg-teal"
+                            className="mt-1 w-4 h-4 text-fg-blue border-gray-300 rounded focus:ring-fg-blue"
                           />
                           <span className="text-sm text-gray-700">
                             Share my email for a thank-you note
@@ -225,7 +225,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="your@email.com"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fg-teal focus:border-transparent"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fg-blue focus:border-transparent"
                           />
                         )}
                       </div>
@@ -241,7 +241,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                       <button
                         onClick={handlePurchase}
                         disabled={isLoading || (shareEmail && !email)}
-                        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-fg-teal to-fg-accent-teal text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-fg-navy to-fg-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       >
                         <CheckCircle className="w-5 h-5" />
                         <span>
@@ -259,7 +259,7 @@ export default function GiftModal({ recipient, onClose, onViewAll }: GiftModalPr
                       onClose();
                       onViewAll();
                     }}
-                    className="flex items-center justify-center gap-2 w-full bg-white text-fg-teal px-8 py-3.5 rounded-xl font-semibold border-2 border-fg-teal/30 hover:border-fg-teal hover:bg-fg-light-blue/50 transition-all duration-200"
+                    className="flex items-center justify-center gap-2 w-full bg-white text-fg-blue px-8 py-3.5 rounded-xl font-semibold border-2 border-fg-blue/30 hover:border-fg-blue hover:bg-fg-light-blue/50 transition-all duration-200"
                   >
                     <span>Browse All Community Member Wishes</span>
                     <ChevronDown className="w-5 h-5" />

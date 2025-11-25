@@ -24,7 +24,7 @@ export default function ThankYouPage() {
 
         {/* Gift confirmation card */}
         <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 mb-8">
-          <div className="flex items-center justify-center gap-2 text-fg-teal mb-3">
+          <div className="flex items-center justify-center gap-2 text-fg-blue mb-3">
             <Gift className="w-5 h-5" />
             <span className="font-semibold">Gift Purchased</span>
           </div>
@@ -53,8 +53,8 @@ export default function ThankYouPage() {
 
         {/* Back to gifts */}
         <Link
-          href="/gift-drive"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-fg-teal text-white rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+          href="/holiday-gift-drive-2025"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-fg-navy text-white rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           View More Gifts

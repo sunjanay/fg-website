@@ -22,7 +22,7 @@ export default function InteractiveTree() {
     return (
       <div className="relative w-full max-w-4xl mx-auto flex items-center justify-center" style={{ height: '700px' }}>
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fg-teal mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fg-blue mx-auto mb-4"></div>
           <p className="text-gray-600">Loading gifts...</p>
         </div>
       </div>

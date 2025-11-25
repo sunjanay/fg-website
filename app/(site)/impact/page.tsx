@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { TrendingUp, Users, Heart, Gift, Calendar, ArrowRight, Download, Target, Eye } from 'lucide-react';
+import { TrendingUp, Users, Heart, Gift, Calendar, ArrowRight, Target, Eye } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '2024 Impact Report | Foster Greatness',
@@ -51,13 +51,13 @@ export default function ImpactPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-fg-navy via-fg-navy to-fg-teal py-20 px-4 overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-teal/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <section className="relative bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue py-20 px-4 overflow-hidden">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-blue/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-fg-orange/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <TrendingUp className="w-4 h-4 text-fg-teal" />
+            <TrendingUp className="w-4 h-4 text-fg-blue" />
             <span className="text-sm font-semibold text-white/90">2024 Annual Report</span>
           </div>
 
@@ -65,18 +65,9 @@ export default function ImpactPage() {
             2024 Impact Report
           </h1>
 
-          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             A testament to the collective efforts of our team, supporters, and community members who have come together to make a meaningful difference.
           </p>
-
-          <a
-            href="/assets/files/2024-impact-report.pdf"
-            download
-            className="inline-flex items-center gap-2 bg-white text-fg-navy px-8 py-4 rounded-full font-bold hover:bg-fg-teal hover:text-white transition-colors"
-          >
-            <Download className="w-5 h-5" />
-            Download Full Report (PDF)
-          </a>
         </div>
       </section>
 
@@ -86,8 +77,8 @@ export default function ImpactPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-xl bg-fg-teal/10">
-                  <Target className="w-6 h-6 text-fg-teal" />
+                <div className="p-3 rounded-xl bg-fg-blue/10">
+                  <Target className="w-6 h-6 text-fg-blue" />
                 </div>
                 <h2 className="text-2xl font-bold text-fg-navy">Our Mission</h2>
               </div>
@@ -124,8 +115,8 @@ export default function ImpactPage() {
                 key={stat.label}
                 className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 text-center"
               >
-                <div className="inline-flex p-3 rounded-xl bg-fg-teal/10 mb-4">
-                  <stat.icon className="w-6 h-6 text-fg-teal" />
+                <div className="inline-flex p-3 rounded-xl bg-fg-blue/10 mb-4">
+                  <stat.icon className="w-6 h-6 text-fg-blue" />
                 </div>
                 <div className="text-4xl md:text-5xl font-bold text-fg-navy mb-2">
                   {stat.number}
@@ -151,7 +142,7 @@ export default function ImpactPage() {
                 className="bg-white rounded-2xl p-8 shadow-md border border-gray-100"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-fg-teal to-fg-navy">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-fg-navy to-fg-blue">
                     <program.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-fg-navy">{program.title}</h3>
@@ -174,7 +165,7 @@ export default function ImpactPage() {
           </p>
           <Link
             href="/donate"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-fg-orange to-fg-yellow text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-fg-navy to-fg-blue text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all"
           >
             Support Our Mission
             <ArrowRight className="w-5 h-5" />

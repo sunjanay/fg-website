@@ -75,7 +75,7 @@ export default function EventsPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6">
-              <Calendar className="w-4 h-4 text-fg-teal" />
+              <Calendar className="w-4 h-4 text-fg-blue" />
               <span className="text-sm font-semibold text-fg-navy">Community Events</span>
             </div>
 
@@ -141,7 +141,7 @@ export default function EventsPage() {
                           <span className="text-xl font-bold">{day}</span>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-bold text-fg-navy group-hover:text-fg-teal transition-colors line-clamp-2 mb-2">
+                          <h3 className="font-bold text-fg-navy group-hover:text-fg-blue transition-colors line-clamp-2 mb-2">
                             {event.name}
                           </h3>
                           <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -182,7 +182,7 @@ export default function EventsPage() {
             href="https://community.fostergreatness.co/c/general-events"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-fg-teal text-white px-8 py-4 rounded-full font-bold hover:bg-fg-navy transition-colors"
+            className="inline-flex items-center gap-2 bg-fg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-fg-navy transition-colors"
           >
             View All Events
             <ArrowRight className="w-5 h-5" />

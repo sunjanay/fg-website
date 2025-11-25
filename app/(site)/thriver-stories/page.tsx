@@ -25,7 +25,7 @@ export default function ThriverStoriesPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6">
-              <Play className="w-4 h-4 text-fg-teal" />
+              <Play className="w-4 h-4 text-fg-blue" />
               <span className="text-sm font-semibold text-fg-navy">Video Series</span>
             </div>
 
@@ -54,12 +54,12 @@ export default function ThriverStoriesPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-fg-navy via-fg-navy to-fg-teal rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+          <div className="bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
 
             <div className="relative z-10">
               <div className="inline-flex p-3 rounded-xl bg-white/10 mb-6">
-                <Heart className="w-8 h-8 text-fg-teal" />
+                <Heart className="w-8 h-8 text-fg-blue" />
               </div>
 
               <h2 className="text-3xl font-bold mb-4">
@@ -72,7 +72,7 @@ export default function ThriverStoriesPage() {
 
               <Link
                 href="/storytellers-collective"
-                className="inline-flex items-center gap-2 bg-white text-fg-navy px-8 py-4 rounded-full font-bold hover:bg-fg-teal hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-fg-navy px-8 py-4 rounded-full font-bold hover:bg-fg-blue hover:text-white transition-colors"
               >
                 Join Storytellers Collective
                 <ArrowRight className="w-5 h-5" />

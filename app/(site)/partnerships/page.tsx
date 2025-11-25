@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Target, Heart, Briefcase, GraduationCap, Home, Building2, CheckCircle2, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
+import ContactSection from '@/components/site/ContactSection';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,38 +34,68 @@ const currentPartners = [
   {
     name: 'EatWell Meal Kits',
     description: 'Provides healthy meal kits and community cooking sessions via Zoom, bringing people together through shared meals.',
-    logo: 'https://placehold.co/300x150/00c8b7/FFFFFF?text=EatWell',
+    logo: '/images/partners/eatwell.png',
     impact: 'Monthly cooking events for 50+ community members'
   },
   {
     name: 'StaffMark Group',
     description: 'Equips foster youth with employment tools, resources, and skills for sustainable employment while expanding employer access to diverse talent.',
-    logo: 'https://placehold.co/300x150/1a2949/FFFFFF?text=StaffMark',
+    logo: '/images/partners/smg.png',
     impact: '100+ job placements and ongoing career support'
   },
   {
     name: 'Foster Care Alumni of America',
     description: 'Monthly advocacy events with advocates and alumni focused on policy change and systemic improvement.',
-    logo: 'https://placehold.co/300x150/0067a2/FFFFFF?text=FCAA',
+    logo: '/images/partners/fcalumni.png',
     impact: 'National policy advocacy reaching 10,000+ alumni'
   },
   {
     name: 'One Simple Wish',
     description: 'Wish-granting platform connecting foster youth with donor-sponsored gifts and essential needs.',
-    logo: 'https://placehold.co/300x150/fa8526/FFFFFF?text=One+Simple+Wish',
+    logo: '/images/partners/osw.png',
     impact: '$50K+ in wishes granted to community members'
   },
   {
     name: 'Lotus Grove Counseling',
     description: 'Mental health and parenting support services tailored to the unique needs of foster care alumni.',
-    logo: 'https://placehold.co/300x150/00c8b7/FFFFFF?text=Lotus+Grove',
+    logo: '/images/partners/lotus-grove.png',
     impact: 'Specialized trauma-informed therapy services'
   },
   {
     name: 'Youth Voices Rising',
     description: 'Teaches storytelling and op-ed writing, empowering youth to shape community narratives through their voices.',
-    logo: 'https://placehold.co/300x150/0067a2/FFFFFF?text=Youth+Voices',
+    logo: '/images/partners/youth-voices-rising.png',
     impact: '30+ published stories amplifying lived experiences'
+  },
+  {
+    name: 'First Star',
+    description: 'Provides educational support and college preparation programs specifically designed for foster youth.',
+    logo: '/images/partners/firststar.png',
+    impact: 'College readiness programs for foster youth'
+  },
+  {
+    name: 'Comfort Cases',
+    description: 'Provides comfort and dignity to children entering foster care by delivering backpacks filled with essential items.',
+    logo: '/images/partners/comfort-cases.png',
+    impact: 'Essential supplies for youth entering care'
+  },
+  {
+    name: 'Freedom Youth Foundation',
+    description: 'Empowers foster youth through mentorship, leadership development, and advocacy opportunities.',
+    logo: '/images/partners/freedomyouthfoundation.png',
+    impact: 'Leadership and advocacy programs'
+  },
+  {
+    name: 'National Network for Sibling Connections',
+    description: 'Works to preserve and strengthen sibling relationships for children and youth in foster care.',
+    logo: '/images/partners/national-network-sibling.png',
+    impact: 'Sibling connection and reunification support'
+  },
+  {
+    name: 'Doing Good Works',
+    description: 'Our parent organization providing infrastructure and support for foster youth-serving initiatives.',
+    logo: '/images/partners/dgw-branded.png',
+    impact: 'Organizational support and capacity building'
   }
 ];
 
@@ -105,19 +137,19 @@ const seekingPartners = [
     icon: GraduationCap,
     category: 'Education',
     areas: ['Tutoring & Academic Support', 'College Preparation', 'Vocational Training', 'Scholarship Programs', 'Financial Literacy'],
-    color: 'from-fg-navy to-fg-teal'
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     icon: Heart,
     category: 'Healthcare',
     areas: ['Mental Health Services', 'Preventive Care', 'Health Insurance Navigation', 'Wellness Programs', 'Trauma-Informed Care'],
-    color: 'from-fg-teal to-fg-navy'
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     icon: Home,
     category: 'Housing',
     areas: ['Transitional Housing', 'Housing Navigation', 'Neighborhood Safety', 'Transportation Access', 'Home Stability Resources'],
-    color: 'from-fg-orange to-fg-yellow'
+    color: 'from-fg-navy to-fg-blue'
   }
 ];
 
@@ -164,7 +196,7 @@ export default function PartnershipsPage() {
           className="mb-10 md:mb-12"
         >
           <motion.div variants={itemVariants} className="max-w-4xl">
-            <p className="text-sm font-semibold text-fg-teal uppercase tracking-wider mb-4">
+            <p className="text-sm font-semibold text-fg-blue uppercase tracking-wider mb-4">
               Partnership Opportunities
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fg-navy mb-6 leading-[1.1] tracking-tight">
@@ -175,15 +207,15 @@ export default function PartnershipsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:partnerships@fostergreatness.co"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors shadow-lg shadow-fg-navy/20"
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
               >
                 <Mail className="w-4 h-4" aria-hidden="true" />
                 Start Partnership Discussion
               </a>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-blue transition-colors"
               >
                 Learn About Foster Greatness
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -218,19 +250,19 @@ export default function PartnershipsPage() {
                 <motion.div
                   key={partner.name}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all group h-full flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all group h-full flex flex-col"
                 >
-                  <div className="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+                  <div className="aspect-square bg-white flex items-center justify-center p-6 border-b border-gray-100">
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      fill
-                      className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
-                      unoptimized
+                      width={200}
+                      height={200}
+                      className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-lg font-bold text-fg-navy mb-2 group-hover:text-fg-teal transition-colors">
+                    <h3 className="text-lg font-bold text-fg-navy mb-2 group-hover:text-fg-blue transition-colors">
                       {partner.name}
                     </h3>
                     <p className="text-sm text-fg-navy/70 leading-relaxed mb-3 flex-1">
@@ -240,7 +272,7 @@ export default function PartnershipsPage() {
                       {partner.impact}
                     </p>
                     {hasDetailPage && (
-                      <span className="inline-flex items-center gap-1 text-fg-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                      <span className="inline-flex items-center gap-1 text-fg-blue font-semibold text-sm group-hover:gap-2 transition-all">
                         View Case Study
                         <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                       </span>
@@ -284,10 +316,10 @@ export default function PartnershipsPage() {
                 <motion.div
                   key={benefit.title}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-fg-teal/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-fg-teal" aria-hidden="true" />
+                  <div className="w-12 h-12 rounded-lg bg-fg-blue/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-fg-blue" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-bold text-fg-navy mb-2">{benefit.title}</h3>
                   <p className="text-sm text-fg-navy/70 leading-relaxed">{benefit.description}</p>
@@ -321,20 +353,20 @@ export default function PartnershipsPage() {
                 <motion.div
                   key={category.category}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all group"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all group"
                 >
                   <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
                   <div className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-fg-navy/5 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-fg-navy" aria-hidden="true" />
                     </div>
-                    <h3 className="text-xl font-bold text-fg-navy mb-4 group-hover:text-fg-teal transition-colors">
+                    <h3 className="text-xl font-bold text-fg-navy mb-4 group-hover:text-fg-blue transition-colors">
                       {category.category}
                     </h3>
                     <ul className="space-y-2">
                       {category.areas.map((area) => (
                         <li key={area} className="flex items-start gap-2 text-sm text-fg-navy/70">
-                          <CheckCircle2 className="w-4 h-4 text-fg-teal flex-shrink-0 mt-0.5" aria-hidden="true" />
+                          <CheckCircle2 className="w-4 h-4 text-fg-blue flex-shrink-0 mt-0.5" aria-hidden="true" />
                           <span>{area}</span>
                         </li>
                       ))}
@@ -371,13 +403,13 @@ export default function PartnershipsPage() {
                 className="relative"
               >
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 h-full">
-                  <div className="text-5xl font-black text-fg-teal/20 mb-4">{step.step}</div>
+                  <div className="text-5xl font-black text-fg-blue/20 mb-4">{step.step}</div>
                   <h3 className="text-lg font-bold text-fg-navy mb-3">{step.title}</h3>
                   <p className="text-sm text-fg-navy/70 leading-relaxed">{step.description}</p>
                 </div>
                 {i < howItWorks.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-fg-teal/30" aria-hidden="true" />
+                    <ArrowRight className="w-6 h-6 text-fg-blue/30" aria-hidden="true" />
                   </div>
                 )}
               </motion.div>
@@ -395,7 +427,7 @@ export default function PartnershipsPage() {
         >
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-fg-navy to-fg-teal rounded-3xl p-8 md:p-12 text-white"
+            className="bg-gradient-to-br from-fg-navy to-fg-blue rounded-3xl p-8 md:p-12 text-white"
           >
             <div className="max-w-3xl mx-auto text-center">
               <div className="text-6xl mb-6">💡</div>
@@ -412,42 +444,16 @@ export default function PartnershipsPage() {
           </motion.div>
         </motion.section>
 
-        {/* CTA Section */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="mb-10 md:mb-12"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-fg-navy/5 text-center"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-4">
-              Ready to Make an Impact?
-            </h2>
-            <p className="text-lg text-fg-navy/70 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let's explore how your organization can partner with Foster Greatness to create meaningful change for foster youth nationwide.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:partnerships@fostergreatness.co"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors shadow-lg shadow-fg-navy/20"
-              >
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                Contact Partnership Team
-              </a>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
-              >
-                Learn More About Us
-                <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </motion.div>
-        </motion.section>
+        {/* Contact Section */}
+        <div id="contact" className="mb-10 md:mb-12 scroll-mt-24">
+          <ContactSection
+            title="Ready to Make an Impact?"
+            subtitle="Start a Partnership"
+            description="Let's explore how your organization can partner with Foster Greatness to create meaningful change for foster youth nationwide. Fill out the form and our partnership team will be in touch."
+            email="partnerships@fostergreatness.co"
+            showCommunityButton={false}
+          />
+        </div>
       </div>
     </div>
   );

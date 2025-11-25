@@ -161,7 +161,7 @@ export default function AboutPage() {
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all duration-300 hover:-translate-y-1"
+                    className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="text-5xl mb-4">{item.icon}</div>
                     <h3 className="text-xl font-bold text-fg-navy mb-3">{item.title}</h3>
@@ -234,7 +234,7 @@ export default function AboutPage() {
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className="bg-white rounded-2xl p-8 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all duration-300"
+                    className="bg-white rounded-2xl p-8 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all duration-300"
                   >
                     <div className="text-5xl mb-6">{item.icon}</div>
                     <h3 className="text-2xl font-bold text-fg-navy mb-4">{item.title}</h3>
@@ -292,23 +292,23 @@ export default function AboutPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { name: 'One Simple Wish', desc: 'Direct connection to a wish-granting platform where foster youth can request gifts sponsored by donors.', logo: 'https://placehold.co/300x150/fa8526/FFFFFF?text=One+Simple+Wish' },
-                  { name: 'Foster Care Alumni of America', desc: 'Collaborative monthly events with advocates and alumni focused on policy change.', logo: 'https://placehold.co/300x150/0067a2/FFFFFF?text=FCAA' },
-                  { name: 'EatWell', desc: 'Healthy meal kits for community cooking sessions, bringing people together through shared meals.', logo: 'https://placehold.co/300x150/00c8b7/FFFFFF?text=EatWell' },
-                  { name: 'StaffMark', desc: 'Equips foster youth with tools and resources for sustainable employment.', logo: 'https://placehold.co/300x150/1a2949/FFFFFF?text=StaffMark' }
+                  { name: 'One Simple Wish', desc: 'Direct connection to a wish-granting platform where foster youth can request gifts sponsored by donors.', logo: '/images/partners/osw.png' },
+                  { name: 'Foster Care Alumni of America', desc: 'Collaborative monthly events with advocates and alumni focused on policy change.', logo: '/images/partners/fcalumni.png' },
+                  { name: 'EatWell', desc: 'Healthy meal kits for community cooking sessions, bringing people together through shared meals.', logo: '/images/partners/eatwell.png' },
+                  { name: 'StaffMark', desc: 'Equips foster youth with tools and resources for sustainable employment.', logo: '/images/partners/smg.png' }
                 ].map((partner, i) => (
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all duration-300 hover:-translate-y-1"
+                    className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="relative h-24 mb-4 rounded-lg overflow-hidden bg-gray-100">
+                    <div className="aspect-square mb-4 flex items-center justify-center p-4">
                       <Image
                         src={partner.logo}
                         alt={`${partner.name} logo`}
-                        fill
-                        className="object-contain p-4"
-                        unoptimized
+                        width={180}
+                        height={180}
+                        className="object-contain w-full h-full"
                       />
                     </div>
                     <h3 className="text-lg font-bold text-fg-navy mb-3">{partner.name}</h3>
@@ -316,6 +316,16 @@ export default function AboutPage() {
                   </motion.div>
                 ))}
               </div>
+
+              <motion.div variants={itemVariants} className="text-center mt-10">
+                <Link
+                  href="/partnerships"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
+                >
+                  View All Partners & Partnership Opportunities
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.section>
@@ -336,24 +346,23 @@ export default function AboutPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  { name: 'Isabel Stasa', role: 'Head of Community Engagement & Public Affairs', bio: 'Lived experience in foster care; first-gen graduate with honors from The University of Michigan. Roles include Foster Youth Policy Consultant, Senate Intern, Public Speaker, and National FY Advocate.', img: 'https://placehold.co/400x500/0067a2/FFFFFF?text=Isabel+Stasa' },
-                  { name: 'Lillee Taylor', role: 'Resource Specialist', bio: 'Lived experience in foster care, worked with non-profits to empower vulnerable youth populations. Skilled and passionate about family reunification, reducing homelessness and supporting foster parents.', img: 'https://placehold.co/400x500/00c8b7/FFFFFF?text=Lillee+Taylor' },
-                  { name: 'Sunny Rangel', role: 'Director of UX & Product Development', bio: "Background in Graphic Design, designed for Fortune 500s. Created structure and user experience for community.", img: 'https://placehold.co/400x500/fa8526/FFFFFF?text=Sunny+Rangel' },
-                  { name: 'Jordan Bartlett', role: 'Co-Founder of Foster Greatness', bio: 'Personal connection to foster care, passionate about systemic change. Manages teams, donor funding and outreach communications.', img: 'https://placehold.co/400x500/1a2949/FFFFFF?text=Jordan+Bartlett' },
-                  { name: 'Scott Henderson', role: 'Co-Founder of Foster Greatness', bio: 'Helps oversee projects, build partnerships, and guide the team. Dedicated to fostering a strong sense of belonging and community.', img: 'https://placehold.co/400x500/0067a2/FFFFFF?text=Scott+Henderson' }
+                  { name: 'Isabel Stasa', role: 'Head of Community Engagement & Public Affairs', bio: 'Lived experience in foster care; first-gen graduate with honors from The University of Michigan. Roles include Foster Youth Policy Consultant, Senate Intern, Public Speaker, and National FY Advocate.', img: '/images/team/isabel-stasa.webp' },
+                  { name: 'Lillee Taylor', role: 'Resource Specialist', bio: 'Lived experience in foster care, worked with non-profits to empower vulnerable youth populations. Skilled and passionate about family reunification, reducing homelessness and supporting foster parents.', img: '/images/team/lillee-taylor.webp' },
+                  { name: 'Sunny Rangel', role: 'Director of UX & Product Development', bio: "Background in Graphic Design, designed for Fortune 500s. Created structure and user experience for community.", img: '/images/team/sunny-rangel.webp' },
+                  { name: 'Jordan Bartlett', role: 'Co-Founder of Foster Greatness', bio: 'Personal connection to foster care, passionate about systemic change. Manages teams, donor funding and outreach communications.', img: '/images/team/jordan-bartlett.webp' },
+                  { name: 'Scott Henderson', role: 'Co-Founder of Foster Greatness', bio: 'Helps oversee projects, build partnerships, and guide the team. Dedicated to fostering a strong sense of belonging and community.', img: '/images/team/scott-henderson.webp' }
                 ].map((member, i) => (
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-teal/30 transition-all duration-300 hover:-translate-y-1"
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 hover:shadow-md hover:border-fg-blue/30 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative h-64 bg-gradient-to-br from-fg-navy to-fg-blue overflow-hidden">
                       <Image
                         src={member.img}
                         alt={`${member.name}, ${member.role}`}
                         fill
-                        className="object-cover"
-                        unoptimized
+                        className="object-cover object-top"
                       />
                     </div>
                     <div className="p-6">
@@ -420,7 +429,7 @@ export default function AboutPage() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-fg-teal via-fg-blue to-fg-navy text-white"
+          className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-fg-navy via-fg-blue to-fg-navy text-white"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-fg-orange/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />

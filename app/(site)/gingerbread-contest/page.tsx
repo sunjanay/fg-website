@@ -62,21 +62,21 @@ export default function Home() {
       icon: Gift, // [CUSTOMIZE] Choose from Lucide icons: Heart, Gift, Users, Sparkles, CheckCircle, etc.
       title: "Complete Gingerbread Kit", // [CUSTOMIZE] Card heading
       description: "Pre-assembled gingerbread house with icing, candies, and decorations delivered to each member's door.", // [CUSTOMIZE] Card description
-      color: "from-fg-teal to-fg-accent-teal", // [KEEP] Use Foster Greatness brand gradients
+      color: "from-fg-navy to-fg-blue", // [KEEP] Use Foster Greatness brand gradients
       delay: 0.1 // [KEEP] Animation timing
     },
     {
       icon: Sparkles,
       title: "Bonus Gift Card",
       description: "Gift card for members to purchase extra decorations and supplies to make their creation uniquely theirs.",
-      color: "from-fg-navy to-fg-teal",
+      color: "from-fg-navy to-fg-blue",
       delay: 0.2
     },
     {
       icon: Users,
       title: "Live Virtual Event",
       description: "Community members connect at 3PM PST for a guided building session, with prizes for the most creative designs.",
-      color: "from-fg-accent-teal to-fg-teal",
+      color: "from-fg-blue to-fg-navy",
       delay: 0.3
     }
   ], []);
@@ -126,7 +126,7 @@ export default function Home() {
       description: "Pre-assembled house, icing, candies, decorations & shipping", // [CUSTOMIZE] What's included
       icon: Gift, // [CUSTOMIZE] Choose appropriate icon
       delay: 0.1,
-      color: "from-fg-teal to-fg-accent-teal"
+      color: "from-fg-navy to-fg-blue"
     },
     {
       amount: 20,
@@ -134,7 +134,7 @@ export default function Home() {
       description: "Additional supplies so members can personalize their creations",
       icon: Sparkles,
       delay: 0.2,
-      color: "from-fg-accent-teal to-fg-teal"
+      color: "from-fg-blue to-fg-navy"
     }
   ], []);
 
@@ -168,7 +168,7 @@ export default function Home() {
             sponsorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }}
-        className="fixed bottom-6 right-6 bg-fg-teal text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl z-50 font-bold text-base md:text-lg transition-all hover:scale-105"
+        className="fixed bottom-6 right-6 bg-fg-navy text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl z-50 font-bold text-base md:text-lg transition-all hover:scale-105"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: 100 }}
@@ -204,7 +204,7 @@ export default function Home() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="inline-flex items-center gap-2 bg-fg-light-blue px-4 py-2 rounded-full mb-6"
                 >
-                  <Heart className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                  <Heart className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                   <span className="text-sm font-semibold text-fg-navy">December 19th, 2025 • 3PM PST 🎄</span>
                 </motion.div>
 
@@ -249,7 +249,7 @@ export default function Home() {
                       }
                     }}
                     aria-label="Donate to fund member gingerbread kits and virtual event"
-                    className="inline-flex items-center gap-2 bg-fg-teal text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90 cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-fg-navy text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90 cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -287,7 +287,7 @@ export default function Home() {
                   🎁
                 </motion.div>
                 <motion.div
-                  className="absolute -bottom-4 -left-4 w-20 h-20 bg-fg-teal rounded-full border-4 border-white shadow-lg flex items-center justify-center text-3xl"
+                  className="absolute -bottom-4 -left-4 w-20 h-20 bg-fg-navy rounded-full border-4 border-white shadow-lg flex items-center justify-center text-3xl"
                   animate={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                 >
@@ -363,7 +363,7 @@ export default function Home() {
                   sponsorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
               }}
-              className="inline-flex items-center gap-2 bg-fg-teal text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90"
+              className="inline-flex items-center gap-2 bg-fg-navy text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:bg-opacity-90"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -429,7 +429,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="relative bg-gradient-to-br from-fg-light-blue/30 to-white rounded-3xl p-10 md:p-12 shadow-xl max-w-5xl mx-auto border-2 border-fg-teal/20 overflow-hidden"
+            className="relative bg-gradient-to-br from-fg-light-blue/30 to-white rounded-3xl p-10 md:p-12 shadow-xl max-w-5xl mx-auto border-2 border-fg-blue/20 overflow-hidden"
           >
             {/* Decorative gingerbread house emoji */}
             <div className="absolute -right-8 -top-8 text-8xl opacity-10 rotate-12 pointer-events-none">
@@ -437,13 +437,13 @@ export default function Home() {
             </div>
 
             {/* Quote mark decoration */}
-            <div className="absolute top-8 left-8 text-6xl text-fg-teal/20 font-serif leading-none">&quot;</div>
+            <div className="absolute top-8 left-8 text-6xl text-fg-blue/20 font-serif leading-none">&quot;</div>
 
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Profile Badge */}
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-teal to-fg-accent-teal flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-fg-navy to-fg-blue flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                     TR
                   </div>
                 </div>
@@ -451,7 +451,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 bg-fg-light-blue px-3 py-1 rounded-full mb-4">
-                    <Heart className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                    <Heart className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                     <span className="text-xs font-semibold text-fg-navy">From last year&apos;s event</span>
                   </div>
 
@@ -514,7 +514,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-fg-navy/90 via-fg-navy/40 to-transparent z-10" />
             <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
               <div className="flex items-center gap-3 mb-3">
-                <div className="inline-flex items-center gap-2 bg-fg-teal px-4 py-2 rounded-full shadow-lg">
+                <div className="inline-flex items-center gap-2 bg-fg-navy px-4 py-2 rounded-full shadow-lg">
                   <Gift className="w-5 h-5 text-white" aria-hidden="true" />
                   <span className="font-bold text-white">What's Included</span> {/* [CUSTOMIZE] Badge text */}
                 </div>
@@ -545,7 +545,7 @@ export default function Home() {
                   <AnimatedCounter value={item.amount} />
                 </div>
 
-                <p className="text-fg-teal font-bold text-xl mb-3">
+                <p className="text-fg-blue font-bold text-xl mb-3">
                   {item.title}
                 </p>
 
@@ -563,15 +563,15 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="relative bg-white rounded-2xl p-6 border-2 border-gray-100 shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-fg-teal to-fg-accent-teal mb-4 shadow-sm">
+              <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-fg-navy to-fg-blue mb-4 shadow-sm">
                 <CheckCircle className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
 
-              <div className="text-5xl md:text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-fg-teal to-fg-accent-teal">
+              <div className="text-5xl md:text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-fg-navy to-fg-blue">
                 <AnimatedCounter value={60} duration={2.5} /> {/* [CUSTOMIZE] Total amount */}
               </div>
 
-              <p className="text-fg-teal font-bold text-xl mb-3">
+              <p className="text-fg-blue font-bold text-xl mb-3">
                 Total Per Member {/* [CUSTOMIZE] Label */}
               </p>
 
@@ -588,13 +588,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="relative bg-gradient-to-br from-fg-teal/5 to-fg-navy/5 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden border-2 border-fg-teal/20"
+              className="relative bg-gradient-to-br from-fg-navy/5 to-fg-navy/5 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden border-2 border-fg-blue/20"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-fg-accent-teal/15 rounded-full blur-3xl" />
 
               <div className="relative z-10">
-                <div className="inline-flex p-4 bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-2xl mb-6">
-                  <Heart className="w-8 h-8 text-fg-teal" aria-hidden="true" />
+                <div className="inline-flex p-4 bg-gradient-to-br from-fg-navy/10 to-fg-navy/10 rounded-2xl mb-6">
+                  <Heart className="w-8 h-8 text-fg-blue" aria-hidden="true" />
                 </div>
 
                 <h3 className="text-3xl font-bold mb-6 text-fg-navy">Community Impact</h3> {/* [CUSTOMIZE] Heading */}
@@ -609,7 +609,7 @@ export default function Home() {
                       transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle className="w-6 h-6 text-fg-teal flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <CheckCircle className="w-6 h-6 text-fg-blue flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="text-gray-700 leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
@@ -674,7 +674,7 @@ export default function Home() {
                   transition={{ delay: 0.2, duration: 0.6 }}
                   className="inline-flex items-center gap-2 bg-fg-light-blue px-4 py-2 rounded-full mb-6"
                 >
-                  <Sparkles className="w-4 h-4 text-fg-teal" aria-hidden="true" />
+                  <Sparkles className="w-4 h-4 text-fg-blue" aria-hidden="true" />
                   <span className="text-sm font-semibold text-fg-navy">Complete Holiday Experience</span> {/* [CUSTOMIZE] Badge text */}
                 </motion.div>
 
@@ -683,7 +683,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.8, type: "spring" }}
-                  className="text-6xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fg-teal to-fg-accent-teal"
+                  className="text-6xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fg-navy to-fg-blue"
                 >
                   <AnimatedCounter value={60} /> {/* [CUSTOMIZE] Price per participant */}
                 </motion.div>
@@ -753,25 +753,25 @@ export default function Home() {
                   transition={{ delay: 0.35, duration: 0.5 }}
                   className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
                 >
-                  <div className="bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-teal/30">
+                  <div className="bg-gradient-to-br from-fg-navy/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-blue/30">
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-fg-teal mb-2">$60</p>
+                      <p className="text-3xl font-bold text-fg-blue mb-2">$60</p>
                       <p className="text-sm text-gray-700 font-semibold mb-1">Fund 1 Member</p>
                       <p className="text-xs text-gray-600">Complete kit + event</p>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-teal/30">
+                  <div className="bg-gradient-to-br from-fg-navy/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-blue/30">
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-fg-teal mb-2">$300</p>
+                      <p className="text-3xl font-bold text-fg-blue mb-2">$300</p>
                       <p className="text-sm text-gray-700 font-semibold mb-1">Fund 5 Members</p>
                       <p className="text-xs text-gray-600">Popular choice</p>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-fg-teal/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-teal/30">
+                  <div className="bg-gradient-to-br from-fg-navy/10 to-fg-navy/10 rounded-xl p-6 border-2 border-fg-blue/30">
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-fg-teal mb-2">$600</p>
+                      <p className="text-3xl font-bold text-fg-blue mb-2">$600</p>
                       <p className="text-sm text-gray-700 font-semibold mb-1">Fund 10 Members</p>
                       <p className="text-xs text-gray-600">Highest impact</p>
                     </div>

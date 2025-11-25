@@ -51,7 +51,7 @@ const typeConfig = {
   news: {
     icon: Newspaper,
     label: 'News',
-    color: 'bg-fg-teal',
+    color: 'bg-fg-blue',
   },
   page: {
     icon: FileText,
@@ -66,7 +66,7 @@ const typeConfig = {
   donate: {
     icon: Heart,
     label: 'Give',
-    color: 'bg-fg-teal',
+    color: 'bg-fg-blue',
   },
 }
 
@@ -88,9 +88,9 @@ function CopyLinkButton({ link }: { link: string }) {
       aria-label="Copy link"
     >
       {copied ? (
-        <Check className="w-4 h-4 text-fg-teal" />
+        <Check className="w-4 h-4 text-fg-blue" />
       ) : (
-        <Link2 className="w-4 h-4 text-gray-500 hover:text-fg-teal" />
+        <Link2 className="w-4 h-4 text-gray-500 hover:text-fg-blue" />
       )}
     </button>
   )
@@ -131,7 +131,7 @@ function HeroSection() {
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Content */}
         <motion.div variants={itemVariants}>
-          <p className="text-sm font-semibold text-fg-teal uppercase tracking-wider mb-4">
+          <p className="text-sm font-semibold text-fg-blue uppercase tracking-wider mb-4">
             Join 2,000+ members nationwide
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fg-navy mb-6 leading-[1.1] tracking-tight">
@@ -145,23 +145,23 @@ function HeroSection() {
               href="https://community.fostergreatness.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors shadow-lg shadow-fg-navy/20"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors shadow-lg shadow-fg-navy/20"
             >
               Join the Community
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
               href="/about"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-teal transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-fg-navy font-semibold hover:text-fg-blue transition-colors"
             >
               Learn More
             </a>
           </div>
           <p className="text-sm text-fg-navy/50">
             Available on{' '}
-            <a href="https://community.fostergreatness.co" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-teal transition-colors">Web</a>,{' '}
-            <a href="https://apps.apple.com/us/app/foster-greatness-community/id6456409836" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-teal transition-colors">iOS</a> &{' '}
-            <a href="https://play.google.com/store/apps/details?id=co.circle.fostergreatness&hl=en_US" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-teal transition-colors">Android</a>
+            <a href="https://community.fostergreatness.co" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-blue transition-colors">Web</a>,{' '}
+            <a href="https://apps.apple.com/us/app/foster-greatness-community/id6456409836" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-blue transition-colors">iOS</a> &{' '}
+            <a href="https://play.google.com/store/apps/details?id=co.circle.fostergreatness&hl=en_US" target="_blank" rel="noopener noreferrer" className="underline hover:text-fg-blue transition-colors">Android</a>
           </p>
         </motion.div>
 
@@ -201,7 +201,7 @@ function FeaturedCard({ update }: { update: Update }) {
       href={update.link}
       {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
       variants={itemVariants}
-      className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 cursor-pointer group h-full hover:shadow-md hover:border-fg-teal/30 transition-all"
+      className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 cursor-pointer group h-full hover:shadow-md hover:border-fg-blue/30 transition-all"
     >
       {/* Image on top */}
       {update.image && (
@@ -225,7 +225,7 @@ function FeaturedCard({ update }: { update: Update }) {
           {config.label}
         </div>
 
-        <h2 className="text-xl md:text-2xl font-bold mb-2 text-fg-navy leading-tight group-hover:text-fg-teal transition-colors">
+        <h2 className="text-xl md:text-2xl font-bold mb-2 text-fg-navy leading-tight group-hover:text-fg-blue transition-colors">
           {update.title}
         </h2>
 
@@ -233,7 +233,7 @@ function FeaturedCard({ update }: { update: Update }) {
           {update.description}
         </p>
 
-        <span className="inline-flex items-center gap-2 text-fg-teal font-semibold group-hover:gap-3 transition-all">
+        <span className="inline-flex items-center gap-2 text-fg-blue font-semibold group-hover:gap-3 transition-all">
           {update.linkText}
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </span>
@@ -249,12 +249,12 @@ function TestimonialQuote() {
       className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 h-full flex flex-col justify-center"
     >
       <div className="flex flex-col items-center text-center">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-fg-teal/20 mb-4">
+        <div className="relative w-36 h-36 rounded-2xl overflow-hidden flex-shrink-0 ring-4 ring-fg-blue/20 mb-4">
           <Image
             src="/images/rimy-morris-2.png"
             alt="Rimy Morris"
             fill
-            className="object-cover object-top"
+            className="object-cover"
           />
         </div>
         <blockquote className="text-fg-navy/80 text-lg leading-relaxed italic mb-3">
@@ -304,11 +304,11 @@ function UpdateCard({ update }: { update: Update }) {
           </span>
         </div>
 
-        <h3 className="text-base font-bold text-fg-navy group-hover:text-fg-teal transition-colors line-clamp-2 mb-3 leading-snug">
+        <h3 className="text-base font-bold text-fg-navy group-hover:text-fg-blue transition-colors line-clamp-2 mb-3 leading-snug">
           {update.title}
         </h3>
 
-        <span className="inline-flex items-center gap-1 text-fg-teal font-semibold text-sm group-hover:gap-2 transition-all">
+        <span className="inline-flex items-center gap-1 text-fg-blue font-semibold text-sm group-hover:gap-2 transition-all">
           {update.linkText}
           <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
         </span>
@@ -326,7 +326,7 @@ function EventsSection({ events, loading }: { events: CircleEvent[]; loading: bo
           href="https://community.fostergreatness.co/c/general-events"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-semibold text-fg-teal hover:text-fg-navy transition-colors"
+          className="text-sm font-semibold text-fg-blue hover:text-fg-navy transition-colors"
         >
           View All
         </a>
@@ -352,7 +352,7 @@ function EventsSection({ events, loading }: { events: CircleEvent[]; loading: bo
                 href={event.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col rounded-xl bg-white border border-fg-navy/5 shadow-sm hover:shadow-md hover:border-fg-teal/30 transition-all group text-center overflow-hidden"
+                className="flex flex-col rounded-xl bg-white border border-fg-navy/5 shadow-sm hover:shadow-md hover:border-fg-blue/30 transition-all group text-center overflow-hidden"
               >
                 {event.cover_image_url && (
                   <div className="relative w-full h-24">
@@ -369,7 +369,7 @@ function EventsSection({ events, loading }: { events: CircleEvent[]; loading: bo
                     <span className="text-[8px] font-bold leading-none opacity-80">{month}</span>
                     <span className="text-base font-bold leading-none">{day}</span>
                   </div>
-                  <p className="font-semibold text-sm text-fg-navy group-hover:text-fg-teal transition-colors line-clamp-2 leading-tight">
+                  <p className="font-semibold text-sm text-fg-navy group-hover:text-fg-blue transition-colors line-clamp-2 leading-tight">
                     {event.name}
                   </p>
                   <p className="text-sm text-fg-navy/50 mt-1">{time}</p>
@@ -391,8 +391,10 @@ function NewsletterSection({ newsletters, loading }: { newsletters: Newsletter[]
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-bold text-fg-navy">Latest Newsletters</h3>
         <a
-          href="/newsletter"
-          className="text-sm font-semibold text-fg-teal hover:text-fg-navy transition-colors"
+          href="https://fostergreatness.beehiiv.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold text-fg-blue hover:text-fg-navy transition-colors"
         >
           View All
         </a>
@@ -418,7 +420,7 @@ function NewsletterSection({ newsletters, loading }: { newsletters: Newsletter[]
               href={newsletter.web_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl border border-fg-navy/5 shadow-sm hover:shadow-md hover:border-fg-teal/30 transition-all overflow-hidden group"
+              className="bg-white rounded-xl border border-fg-navy/5 shadow-sm hover:shadow-md hover:border-fg-blue/30 transition-all overflow-hidden group"
             >
               {newsletter.thumbnail_url && (
                 <div className="relative w-full h-32 overflow-hidden">
@@ -431,10 +433,10 @@ function NewsletterSection({ newsletters, loading }: { newsletters: Newsletter[]
                 </div>
               )}
               <div className="p-3">
-                <h4 className="font-bold text-sm text-fg-navy group-hover:text-fg-teal transition-colors line-clamp-2 mb-2">
+                <h4 className="font-bold text-sm text-fg-navy group-hover:text-fg-blue transition-colors line-clamp-2 mb-2">
                   {newsletter.title}
                 </h4>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-fg-teal group-hover:gap-2 transition-all">
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-fg-blue group-hover:gap-2 transition-all">
                   Read
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </span>
@@ -470,7 +472,7 @@ function CommunitySection() {
             </p>
             <a
               href="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-teal hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-blue hover:text-white transition-colors"
             >
               About Foster Greatness
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -567,52 +569,72 @@ const testimonials = [
   {
     name: 'Zoey Dunkel',
     quote: "Foster Greatness has given me hope during some of my hardest moments. The team made me feel seen, cared for, and not alone.",
-    avatar: 'https://avatar.vercel.sh/zoey'
+    avatar: null,
+    initials: 'ZD',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Majd Abdallah',
     quote: "A centralized platform like Foster Greatness has been missing for foster kids and under resource people for so long. Y'all are seriously trailblazing!",
-    avatar: '/images/majd-abdallah.jpg'
+    avatar: '/images/majd-abdallah.jpg',
+    initials: 'MA',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Michael Davis-Thomas',
     quote: "Through Foster Greatness, I discovered a renewed sense of purpose, which has fueled personal growth and boosted my professional confidence.",
-    avatar: '/images/michael-davis-thomas.jpg'
+    avatar: '/images/michael-davis-thomas.jpg',
+    initials: 'MD',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Taylor Rockhold',
     quote: "Foster Greatness helped me tap into strengths I didn't even know I had.",
-    avatar: '/images/taylor-rockhold.jpg'
+    avatar: '/images/taylor-rockhold.jpg',
+    initials: 'TR',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Eugenia Doreen',
     quote: "Foster Greatness is more than an organization—it's a movement rooted in innovation, transformation, and joy.",
-    avatar: '/images/eugenia-wallace.jpg'
+    avatar: '/images/eugenia-wallace.jpg',
+    initials: 'ED',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Julie Ong',
     quote: "As I enter CSU for the fall semester, I know I can count on Foster Greatness for their continued support and helpful resources!",
-    avatar: 'https://avatar.vercel.sh/julie'
+    avatar: null,
+    initials: 'JO',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Jessica Patino',
     quote: "Because of their consistent support, I feel stronger, connected, and equipped to build a brighter future for my family too.",
-    avatar: 'https://avatar.vercel.sh/jessica'
+    avatar: null,
+    initials: 'JP',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Emmerald Evans',
     quote: "They didn't just ask me to share my story—they gave me the tools to shape it, own it, and use it to make an impact.",
-    avatar: '/images/emmerald-evans.jpg'
+    avatar: '/images/emmerald-evans.jpg',
+    initials: 'EE',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Chyenne Santini',
     quote: "Having the opportunity to be part of the very first cohort of the Storyteller Collective ignited a fire of inspiration within me.",
-    avatar: '/images/chyenne-roan-santini.jpg'
+    avatar: '/images/chyenne-roan-santini.jpg',
+    initials: 'CS',
+    color: 'from-fg-navy to-fg-blue'
   },
   {
     name: 'Stormy Lukasavage',
     quote: "Foster Greatness pioneers the concept of involved participation and takes it to the next level by making it accessible and open.",
-    avatar: '/images/stormy-lukasavage.jpg'
+    avatar: '/images/stormy-lukasavage.jpg',
+    initials: 'SL',
+    color: 'from-fg-navy to-fg-blue'
   },
 ]
 
@@ -685,12 +707,18 @@ function TestimonialSection() {
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-fg-navy/5 h-full flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-14 h-14 relative flex-shrink-0">
-                      <Image
-                        src={t.avatar}
-                        alt={t.name}
-                        fill
-                        className="rounded-full object-cover ring-2 ring-fg-teal/20"
-                      />
+                      {t.avatar ? (
+                        <Image
+                          src={t.avatar}
+                          alt={t.name}
+                          fill
+                          className="rounded-full object-cover ring-2 ring-fg-blue/20"
+                        />
+                      ) : (
+                        <div className={`w-full h-full rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center ring-2 ring-fg-blue/20`}>
+                          <span className="text-white font-bold text-lg">{t.initials}</span>
+                        </div>
+                      )}
                     </div>
                     <p className="font-bold text-fg-navy text-lg">{t.name}</p>
                   </div>
@@ -729,7 +757,7 @@ function TestimonialSection() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-colors ${
-              index === currentIndex ? 'bg-fg-teal' : 'bg-fg-navy/20'
+              index === currentIndex ? 'bg-fg-blue' : 'bg-fg-navy/20'
             }`}
             aria-label={`Go to testimonial group ${index + 1}`}
           />
@@ -748,9 +776,9 @@ function ContactSection() {
       variants={containerVariants}
       className="mt-10 md:mt-12"
     >
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-navy via-fg-navy to-fg-teal/80">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue/80">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-teal/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-blue/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-fg-coral/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
 
@@ -759,7 +787,7 @@ function ContactSection() {
             {/* Content */}
             <motion.div variants={itemVariants}>
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                <Mail className="w-4 h-4 text-fg-teal" />
+                <Mail className="w-4 h-4 text-fg-blue" />
                 <span className="text-sm font-semibold text-white/90">We'd love to hear from you</span>
               </div>
 
@@ -773,7 +801,7 @@ function ContactSection() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="mailto:info@fostergreatness.co"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-teal hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-blue hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Email Us
@@ -837,7 +865,7 @@ function AppDownloadSection() {
       variants={containerVariants}
       className="mt-10 md:mt-12"
     >
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-teal via-fg-teal to-fg-navy">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-fg-coral/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -932,12 +960,12 @@ function DGWBrandedSection() {
             {/* Arrow */}
             <div className="hidden md:flex justify-center">
               <div className="flex flex-col items-center gap-2">
-                <div className="w-24 h-0.5 bg-gradient-to-r from-fg-teal to-fg-coral" />
+                <div className="w-24 h-0.5 bg-gradient-to-r from-fg-navy to-fg-blue" />
                 <span className="text-xs font-semibold text-fg-navy/40 uppercase tracking-wider">Funds</span>
               </div>
             </div>
             <div className="md:hidden flex justify-center">
-              <div className="w-0.5 h-8 bg-gradient-to-b from-fg-teal to-fg-coral" />
+              <div className="w-0.5 h-8 bg-gradient-to-b from-fg-navy to-fg-blue" />
             </div>
 
             {/* Foster Greatness */}
@@ -1035,7 +1063,7 @@ function VoiceAmplificationSection() {
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={containerVariants}
-      className="mt-10 md:mt-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-10 bg-fg-teal/[0.03] rounded-3xl"
+      className="mt-10 md:mt-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-10 bg-fg-blue/[0.03] rounded-3xl"
     >
       <motion.div variants={itemVariants} className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-fg-navy mb-3">
@@ -1053,7 +1081,7 @@ function VoiceAmplificationSection() {
             href={item.link}
             {...(item.link.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
             variants={itemVariants}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-teal/30 transition-all block"
+            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-blue/30 transition-all block"
           >
             <div className="relative h-44 w-full overflow-hidden">
               <Image
@@ -1064,13 +1092,13 @@ function VoiceAmplificationSection() {
               />
             </div>
             <div className="p-5">
-              <h3 className="font-bold text-lg text-fg-navy group-hover:text-fg-teal transition-colors mb-2">
+              <h3 className="font-bold text-lg text-fg-navy group-hover:text-fg-blue transition-colors mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-fg-navy/70 leading-relaxed mb-3">
                 {item.description}
               </p>
-              <span className="inline-flex items-center gap-1 text-fg-teal font-semibold text-sm group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-fg-blue font-semibold text-sm group-hover:gap-2 transition-all">
                 {item.cta}
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </span>
@@ -1107,7 +1135,7 @@ function WhatYoullGetSection() {
             href={feature.link}
             {...(feature.link.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
             variants={itemVariants}
-            className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-teal/30 transition-all block ${
+            className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-fg-navy/5 group hover:shadow-md hover:border-fg-blue/30 transition-all block ${
               feature.featured ? 'sm:col-span-2 lg:col-span-1' : ''
             }`}
           >
@@ -1120,13 +1148,13 @@ function WhatYoullGetSection() {
               />
             </div>
             <div className="p-5">
-              <h3 className="font-bold text-lg text-fg-navy group-hover:text-fg-teal transition-colors mb-2">
+              <h3 className="font-bold text-lg text-fg-navy group-hover:text-fg-blue transition-colors mb-2">
                 {feature.title}
               </h3>
               <p className="text-sm text-fg-navy/70 leading-relaxed mb-3">
                 {feature.description}
               </p>
-              <span className="inline-flex items-center gap-1 text-fg-teal font-semibold text-sm group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-fg-blue font-semibold text-sm group-hover:gap-2 transition-all">
                 {feature.cta}
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </span>
@@ -1140,7 +1168,7 @@ function WhatYoullGetSection() {
           href="https://community.fostergreatness.co"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-teal transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-fg-navy text-white font-semibold rounded-full hover:bg-fg-blue transition-colors"
         >
           Join the Community
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -1270,7 +1298,7 @@ export default function Home() {
                   variants={itemVariants}
                   className="block group"
                 >
-                  <div className="bg-white rounded-xl shadow-sm border border-fg-navy/5 group-hover:shadow-md group-hover:border-fg-teal/30 transition-all overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-sm border border-fg-navy/5 group-hover:shadow-md group-hover:border-fg-blue/30 transition-all overflow-hidden">
                     <div className="flex flex-col sm:flex-row">
                       {/* Image */}
                       {update.image && (
@@ -1292,7 +1320,7 @@ export default function Home() {
                               <Icon className="w-3 h-3" />
                               {config.label}
                             </span>
-                            <h3 className="font-bold text-fg-navy group-hover:text-fg-teal transition-colors">
+                            <h3 className="font-bold text-fg-navy group-hover:text-fg-blue transition-colors">
                               {update.title}
                             </h3>
                           </div>
@@ -1303,7 +1331,7 @@ export default function Home() {
                         <p className="text-sm text-fg-navy/70 leading-relaxed mb-3">
                           {update.description}
                         </p>
-                        <span className="inline-flex items-center gap-1 text-fg-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1 text-fg-blue font-semibold text-sm group-hover:gap-2 transition-all">
                           {update.cta || update.linkText}
                           <ArrowRight className="w-3.5 h-3.5" />
                         </span>
@@ -1350,7 +1378,7 @@ export default function Home() {
       </div>
 
       {/* Typeform Embed Script */}
-      <Script src="//embed.typeform.com/next/embed.js" strategy="lazyOnload" />
+      <Script src="//embed.typeform.com/next/embed.js" strategy="afterInteractive" />
     </div>
   )
 }
