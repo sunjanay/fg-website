@@ -19,6 +19,7 @@ const config: Config = {
 
         // FG-prefixed colors (for updates page)
         'fg-navy': '#1a2949',
+        'fg-blue': '#0067a2',
         'fg-teal': '#0067a2',  // Secondary blue color that supplements navy
         'fg-light-blue': '#ddf3ff',
         'fg-orange': '#fa8526',
