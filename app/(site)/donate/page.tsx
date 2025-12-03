@@ -1,39 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, Gift, Sparkles, ArrowRight } from 'lucide-react';
+import { Heart, Gift, ArrowRight } from 'lucide-react';
+import { getDonateCampaigns, siteConfig, homepageConfig } from '@/data';
 
 export const metadata: Metadata = {
   title: 'Donate | Foster Greatness',
   description: 'Support Foster Greatness and help create lifelong community and belonging for current and former foster youth.',
 };
 
-const campaigns = [
-  {
-    title: 'Holiday Gift Drive 2025',
-    description: 'Choose a gift from our interactive Christmas tree and bring holiday joy to a community member.',
-    image: '/images/holiday-gift-tree.png',
-    href: '/holiday-gift-drive-2025',
-    icon: Gift,
-    color: 'from-fg-navy to-fg-blue',
-  },
-  {
-    title: 'Gingerbread House Contest',
-    description: 'Fund gingerbread kits and gift cards for our virtual community building event.',
-    image: '/images/gingerbread-1.jpg',
-    href: '/gingerbread',
-    icon: Sparkles,
-    color: 'from-fg-navy to-fg-blue',
-  },
-];
-
-const impactStats = [
-  { number: '310', label: 'Event Attendees' },
-  { number: '77', label: 'Wishes Granted' },
-  { number: '100+', label: 'Community Members' },
-];
-
 export default function DonatePage() {
+  // Get campaigns from config - automatically filters to active + showOnDonatePage
+  const campaigns = getDonateCampaigns();
+  const impactStats = homepageConfig.impactSection.stats;
+
   return (
     <main className="relative min-h-screen bg-[#fafbfc]">
       {/* Subtle texture */}
@@ -51,7 +31,7 @@ export default function DonatePage() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Heart className="w-4 h-4 text-fg-blue" />
+            <Heart className="w-4 h-4 text-white" />
             <span className="text-sm font-semibold text-white/90">100% goes directly to programs</span>
           </div>
 
@@ -65,54 +45,61 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Active Campaigns */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-fg-navy mb-4">
-              Active Campaigns
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Choose a campaign to support, or make a general donation below.
-            </p>
-          </div>
+      {/* Active Campaigns - Dynamically generated from data/campaigns.ts */}
+      {campaigns.length > 0 && (
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-fg-navy mb-4">
+                Active Campaigns
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose a campaign to support, or make a general donation below.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {campaigns.map((campaign) => (
-              <Link
-                key={campaign.title}
-                href={campaign.href}
-                className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={campaign.image}
-                    alt={campaign.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${campaign.color} opacity-20`} />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={`p-2 rounded-lg bg-gradient-to-br ${campaign.color}`}>
-                      <campaign.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-fg-navy group-hover:text-fg-blue transition-colors">
-                      {campaign.title}
-                    </h3>
+            <div className={`grid ${campaigns.length === 1 ? 'max-w-lg' : 'md:grid-cols-2 max-w-4xl'} gap-8 mx-auto`}>
+              {campaigns.map((campaign) => (
+                <Link
+                  key={campaign.id}
+                  href={`/${campaign.slug}`}
+                  className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={campaign.image}
+                      alt={campaign.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-fg-navy to-fg-blue opacity-20" />
                   </div>
-                  <p className="text-gray-600 mb-4">{campaign.description}</p>
-                  <span className="inline-flex items-center gap-2 text-fg-blue font-semibold group-hover:gap-3 transition-all">
-                    Support This Campaign
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </Link>
-            ))}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-fg-navy to-fg-blue">
+                        <Gift className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-fg-navy group-hover:text-fg-blue transition-colors">
+                        {campaign.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 mb-4">{campaign.description}</p>
+                    {campaign.donationAmount && (
+                      <p className="text-lg font-bold text-fg-blue mb-4">
+                        ${campaign.donationAmount} {campaign.donationLabel?.toLowerCase().replace('fund ', 'per ').replace('give ', '')}
+                      </p>
+                    )}
+                    <span className="inline-flex items-center gap-2 text-fg-blue font-semibold group-hover:gap-3 transition-all">
+                      {campaign.donationLabel || 'Support This Campaign'}
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* General Donation */}
       <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
@@ -132,7 +119,7 @@ export default function DonatePage() {
 
             <div className="flex justify-center mb-8">
               <a
-                href="https://donate.stripe.com/8wM3fO2Xn5Ht1tm3cc"
+                href={siteConfig.donation.generalStripeLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-fg-navy to-fg-blue text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
@@ -144,8 +131,8 @@ export default function DonatePage() {
 
             <p className="text-center text-sm text-gray-500">
               Questions? Contact us at{' '}
-              <a href="mailto:jordanb@doinggoodworks.com" className="text-fg-blue hover:underline">
-                jordanb@doinggoodworks.com
+              <a href={`mailto:${siteConfig.donation.contactEmail}`} className="text-fg-blue hover:underline">
+                {siteConfig.donation.contactEmail}
               </a>
             </p>
           </div>
@@ -160,7 +147,7 @@ export default function DonatePage() {
           <div className="grid grid-cols-3 gap-8 mb-8">
             {impactStats.map((stat) => (
               <div key={stat.label}>
-                <div className="text-4xl md:text-5xl font-bold text-fg-blue mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-fg-blue mb-2">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}

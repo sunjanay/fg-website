@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { getNavCampaigns } from '@/data';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,6 +11,9 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Get campaigns from config
+  const navCampaigns = getNavCampaigns();
 
   // Clear any pending close timeout
   const clearCloseTimeout = useCallback(() => {
@@ -307,64 +311,41 @@ export default function Header() {
                 </div>
               )}
 
-              {/* Campaigns Mega Menu */}
+              {/* Campaigns Mega Menu - Dynamically generated from data/campaigns.ts */}
               {activeMenu === 'campaigns' && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Campaign Cards */}
-                  <Link
-                    href="/holiday-gift-drive-2025"
-                    className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fadeIn"
-                  >
-                    <div className="flex flex-col sm:flex-row">
-                      <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
-                        <Image
-                          src="/images/holiday-gift-tree.png"
-                          alt="Holiday Gift Drive"
-                          fill
-                          className="object-contain bg-gradient-to-br from-light-blue to-white p-4"
-                        />
+                <div className={`grid grid-cols-1 ${navCampaigns.length > 1 ? 'lg:grid-cols-2' : ''} gap-8`}>
+                  {navCampaigns.map((campaign, index) => (
+                    <Link
+                      key={campaign.id}
+                      href={`/${campaign.slug}`}
+                      className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fadeIn"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="flex flex-col sm:flex-row">
+                        <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
+                          <Image
+                            src={campaign.image}
+                            alt={campaign.title}
+                            fill
+                            className={campaign.image.includes('gift-tree') ? 'object-contain bg-gradient-to-br from-light-blue to-white p-4' : 'object-cover'}
+                          />
+                        </div>
+                        <div className="p-6 flex flex-col justify-center">
+                          <div className="text-xs font-bold text-orange uppercase tracking-wider mb-2">
+                            {campaign.status === 'active' ? 'Active Campaign' : campaign.status === 'upcoming' ? 'Coming Soon' : ''}
+                          </div>
+                          <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">{campaign.title}</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed mb-4">{campaign.description}</p>
+                          <span className="inline-flex items-center gap-2 text-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                            {campaign.donationLabel || 'Learn More'}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
-                      <div className="p-6 flex flex-col justify-center">
-                        <div className="text-xs font-bold text-orange uppercase tracking-wider mb-2">Active Campaign</div>
-                        <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">Holiday Gift Drive 2025</h4>
-                        <p className="text-sm text-gray-600 leading-relaxed mb-4">Help provide gifts to foster youth this holiday season through our interactive giving tree</p>
-                        <span className="inline-flex items-center gap-2 text-blue font-semibold text-sm group-hover:gap-3 transition-all">
-                          Give a Gift
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="/gingerbread"
-                    className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fadeIn"
-                    style={{ animationDelay: '100ms' }}
-                  >
-                    <div className="flex flex-col sm:flex-row">
-                      <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
-                        <Image
-                          src="/images/gingerbread-1.jpg"
-                          alt="Gingerbread House Contest"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-6 flex flex-col justify-center">
-                        <div className="text-xs font-bold text-orange uppercase tracking-wider mb-2">Active Campaign</div>
-                        <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">Gingerbread House Contest</h4>
-                        <p className="text-sm text-gray-600 leading-relaxed mb-4">Support our community gingerbread building event and help create joyful memories</p>
-                        <span className="inline-flex items-center gap-2 text-blue font-semibold text-sm group-hover:gap-3 transition-all">
-                          Learn More
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -380,8 +361,15 @@ export default function Header() {
               <div className="px-4 py-3">
                 <div className="font-bold text-navy mb-3">Campaigns</div>
                 <div className="ml-4 space-y-2">
-                  <Link href="/holiday-gift-drive-2025" className="block text-gray-600 hover:text-navy text-sm py-2">🎄 Holiday Gift Drive</Link>
-                  <Link href="/gingerbread" className="block text-gray-600 hover:text-navy text-sm py-2">🏠 Gingerbread Contest</Link>
+                  {navCampaigns.map((campaign) => (
+                    <Link
+                      key={campaign.id}
+                      href={`/${campaign.slug}`}
+                      className="block text-gray-600 hover:text-navy text-sm py-2"
+                    >
+                      {campaign.icon} {campaign.shortTitle}
+                    </Link>
+                  ))}
                 </div>
               </div>
               <Link href="/partnerships" className="text-gray-700 hover:text-navy hover:bg-white transition-all px-4 py-3 rounded-lg font-semibold">Partnerships</Link>
