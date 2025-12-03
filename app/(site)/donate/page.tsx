@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, Gift, Sparkles, Users, ArrowRight } from 'lucide-react';
+import { Heart, Gift, Sparkles, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Donate | Foster Greatness',
@@ -23,14 +23,6 @@ const campaigns = [
     image: '/images/gingerbread-1.jpg',
     href: '/gingerbread',
     icon: Sparkles,
-    color: 'from-fg-navy to-fg-blue',
-  },
-  {
-    title: 'Meal Kit Sponsors',
-    description: 'Provide Thanksgiving meal kits to foster families and community members.',
-    image: '/images/community-feature.png',
-    href: '/meal-kit-sponsors',
-    icon: Users,
     color: 'from-fg-navy to-fg-blue',
   },
 ];
@@ -85,7 +77,7 @@ export default function DonatePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {campaigns.map((campaign) => (
               <Link
                 key={campaign.title}

@@ -309,57 +309,62 @@ export default function Header() {
 
               {/* Campaigns Mega Menu */}
               {activeMenu === 'campaigns' && (
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-navy mb-8 animate-fadeIn">Current Campaigns</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                      {
-                        icon: '🎄',
-                        title: 'Holiday Gift Drive 2025',
-                        desc: 'Help provide gifts to foster youth this holiday season through our interactive giving tree',
-                        href: '/holiday-gift-drive-2025',
-                        gradient: 'from-navy via-navy to-blue',
-                        delay: '0ms'
-                      },
-                      {
-                        icon: '🏠',
-                        title: 'Gingerbread House Contest',
-                        desc: 'Support our community gingerbread building event and help create joyful memories',
-                        href: '/gingerbread',
-                        gradient: 'from-navy via-blue to-navy',
-                        delay: '100ms'
-                      },
-                      {
-                        icon: '🦃',
-                        title: 'Meal Kit Sponsors',
-                        desc: 'Partner with us to provide Thanksgiving meal kits to foster families',
-                        href: '/meal-kit-sponsors',
-                        gradient: 'from-navy via-blue to-navy',
-                        delay: '200ms'
-                      }
-                    ].map((campaign, i) => (
-                      <Link
-                        key={i}
-                        href={campaign.href}
-                        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${campaign.gradient} p-8 text-white hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fadeIn`}
-                        style={{ animationDelay: campaign.delay }}
-                      >
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
-                        <div className="relative z-10">
-                          <div className="text-6xl mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">{campaign.icon}</div>
-                          <h4 className="text-2xl font-bold mb-3">{campaign.title}</h4>
-                          <p className="text-sm mb-6 opacity-90 leading-relaxed">{campaign.desc}</p>
-                          <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-bold group-hover:bg-white group-hover:text-navy transition-all duration-300">
-                            Learn More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="group-hover:translate-x-1 transition-transform">
-                              <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Campaign Cards */}
+                  <Link
+                    href="/holiday-gift-drive-2025"
+                    className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fadeIn"
+                  >
+                    <div className="flex flex-col sm:flex-row">
+                      <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
+                        <Image
+                          src="/images/holiday-gift-tree.png"
+                          alt="Holiday Gift Drive"
+                          fill
+                          className="object-contain bg-gradient-to-br from-light-blue to-white p-4"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col justify-center">
+                        <div className="text-xs font-bold text-orange uppercase tracking-wider mb-2">Active Campaign</div>
+                        <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">Holiday Gift Drive 2025</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4">Help provide gifts to foster youth this holiday season through our interactive giving tree</p>
+                        <span className="inline-flex items-center gap-2 text-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                          Give a Gift
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/gingerbread"
+                    className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fadeIn"
+                    style={{ animationDelay: '100ms' }}
+                  >
+                    <div className="flex flex-col sm:flex-row">
+                      <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
+                        <Image
+                          src="/images/gingerbread-1.jpg"
+                          alt="Gingerbread House Contest"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col justify-center">
+                        <div className="text-xs font-bold text-orange uppercase tracking-wider mb-2">Active Campaign</div>
+                        <h4 className="text-xl font-bold text-navy group-hover:text-blue mb-2 transition-colors">Gingerbread House Contest</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4">Support our community gingerbread building event and help create joyful memories</p>
+                        <span className="inline-flex items-center gap-2 text-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                          Learn More
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               )}
             </div>
@@ -377,7 +382,6 @@ export default function Header() {
                 <div className="ml-4 space-y-2">
                   <Link href="/holiday-gift-drive-2025" className="block text-gray-600 hover:text-navy text-sm py-2">🎄 Holiday Gift Drive</Link>
                   <Link href="/gingerbread" className="block text-gray-600 hover:text-navy text-sm py-2">🏠 Gingerbread Contest</Link>
-                  <Link href="/meal-kit-sponsors" className="block text-gray-600 hover:text-navy text-sm py-2">🦃 Meal Kit Sponsors</Link>
                 </div>
               </div>
               <Link href="/partnerships" className="text-gray-700 hover:text-navy hover:bg-white transition-all px-4 py-3 rounded-lg font-semibold">Partnerships</Link>
