@@ -270,7 +270,7 @@ export default function GingerbreadPage() {
             publishableKey="pk_live_51Mz3wTF61ARMru0WN9TAU1BYRJ6f6FUlM1jFnHqnyPBOx0ZmdhGqB4cG8ehRv5KNgtgElhjXRtkEhtW9U7rIbA3f00CUAZUEo6"
           />
           <p className="text-center text-sm text-gray-500 mt-4">
-            Questions? Contact jordanb@doinggoodworks.com
+            Questions? Contact info@fostergreatness.co
           </p>
         </div>
       </section>
@@ -606,7 +606,7 @@ export default function GingerbreadPage() {
           </div>
 
           <p className="text-center text-sm text-gray-500 mt-6">
-            Questions? Contact jordanb@doinggoodworks.com
+            Questions? Contact info@fostergreatness.co
           </p>
         </div>
       </section>

@@ -1,8 +1,8 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, ArrowRight } from 'lucide-react';
-import Script from 'next/script';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -44,74 +44,90 @@ export default function ContactSection({
   showCommunityButton = true,
   className = "",
 }: ContactSectionProps) {
+  const typeformRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load Typeform script dynamically
+    const script = document.createElement('script');
+    script.src = '//embed.typeform.com/next/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup on unmount
+      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
-    <>
-      <Script src="//embed.typeform.com/next/embed.js" strategy="afterInteractive" />
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={containerVariants}
-        className={className}
-      >
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue/80">
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-fg-blue/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-fg-coral/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={containerVariants}
+      className={className}
+    >
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fg-navy via-fg-navy to-fg-blue/80">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-fg-blue/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-fg-coral/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
 
-          <div className="relative p-8 md:p-12">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Content */}
-              <motion.div variants={itemVariants}>
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                  <Mail className="w-4 h-4 text-fg-blue" />
-                  <span className="text-sm font-semibold text-white/90">{subtitle}</span>
-                </div>
+        <div className="relative p-8 md:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Content */}
+            <motion.div variants={itemVariants}>
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <Mail className="w-4 h-4 text-white" />
+                <span className="text-sm font-semibold text-white/90">{subtitle}</span>
+              </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                  {title}
-                </h2>
-                <p className="text-lg text-white/80 leading-relaxed mb-8">
-                  {description}
-                </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                {title}
+              </h2>
+              <p className="text-lg text-white/80 leading-relaxed mb-8">
+                {description}
+              </p>
 
-                <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={`mailto:${email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-light-blue transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  Email Us
+                </a>
+                {showCommunityButton && (
                   <a
-                    href={`mailto:${email}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-blue hover:text-white transition-colors"
+                    href="https://community.fostergreatness.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/10 transition-colors"
                   >
-                    <Mail className="w-4 h-4" />
-                    Email Us
+                    Join Community
+                    <ArrowRight className="w-4 h-4" />
                   </a>
-                  {showCommunityButton && (
-                    <a
-                      href="https://community.fostergreatness.co"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/10 transition-colors"
-                    >
-                      Join Community
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </motion.div>
+                )}
+              </div>
+            </motion.div>
 
-              {/* Typeform */}
-              <motion.div
-                variants={itemVariants}
-                className="bg-white rounded-2xl shadow-2xl overflow-hidden"
-              >
-                <div
-                  data-tf-live="01KAF384A3ZB71SN3JRSRCSWAD"
-                  className="w-full min-h-[450px]"
-                />
-              </motion.div>
-            </div>
+            {/* Typeform */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-white rounded-2xl shadow-2xl overflow-hidden"
+            >
+              <div
+                ref={typeformRef}
+                data-tf-live="01KAF384A3ZB71SN3JRSRCSWAD"
+                className="w-full min-h-[450px]"
+              />
+            </motion.div>
           </div>
         </div>
-      </motion.section>
-    </>
+      </div>
+    </motion.section>
   );
 }

@@ -793,7 +793,7 @@ export default function Home() {
                 </motion.div>
 
                 <p className="text-center text-sm text-gray-500 mt-6">
-                  Questions? Contact us at jordanb@doinggoodworks.com {/* [CUSTOMIZE] Contact email */}
+                  Questions? Contact us at info@fostergreatness.co
                 </p>
               </div>
             </motion.div>

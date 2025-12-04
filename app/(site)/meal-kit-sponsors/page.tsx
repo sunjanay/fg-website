@@ -178,7 +178,7 @@ export default function MealKitSponsorsPage() {
             title="Become a Meal Kit Sponsor"
             subtitle="Partner With Us"
             description="Your partnership creates belonging for foster youth families during the holidays and beyond. Fill out the form to learn about sponsorship opportunities and how you can make a difference."
-            email="jordanb@doinggoodworks.com"
+            email="info@fostergreatness.co"
             showCommunityButton={false}
           />
         </div>

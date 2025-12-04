@@ -86,10 +86,10 @@ export default function GiftDrivePage() {
           <p className="text-gray-600">
             Questions? Contact us at{' '}
             <a
-              href="mailto:jordanb@doinggoodworks.com"
+              href="mailto:info@fostergreatness.co"
               className="text-fg-blue font-semibold hover:underline"
             >
-              jordanb@doinggoodworks.com
+              info@fostergreatness.co
             </a>
           </p>
         </div>

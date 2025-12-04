@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
   donation: {
     generalStripeLink: 'https://donate.stripe.com/8wM3fO2Xn5Ht1tm3cc',
     processingFeeRate: 0.03,
-    contactEmail: 'jordanb@doinggoodworks.com',
+    contactEmail: 'info@fostergreatness.co',
   },
 
   links: {
