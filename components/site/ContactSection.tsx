@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, ArrowRight } from 'lucide-react';
+import TypeformEmbed from '@/components/shared/TypeformEmbed';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,8 +34,26 @@ interface ContactSectionProps {
   email?: string;
   showCommunityButton?: boolean;
   className?: string;
+  /**
+   * Optional custom Typeform ID. If not provided, uses the default contact form.
+   */
+  typeformId?: string;
 }
 
+/**
+ * ContactSection - Reusable contact section with Typeform embed
+ *
+ * This component provides a styled contact section with:
+ * - Customizable title, subtitle, and description
+ * - Email button
+ * - Optional community button
+ * - Embedded Typeform contact form
+ *
+ * Usage:
+ *   <ContactSection />                                    // Default settings
+ *   <ContactSection email="custom@email.com" />           // Custom email
+ *   <ContactSection typeformId="abc123" />                // Custom form
+ */
 export default function ContactSection({
   title = "Let's Connect",
   subtitle = "We'd love to hear from you",
@@ -43,25 +61,8 @@ export default function ContactSection({
   email = "info@fostergreatness.co",
   showCommunityButton = true,
   className = "",
+  typeformId,
 }: ContactSectionProps) {
-  const typeformRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Load Typeform script dynamically
-    const script = document.createElement('script');
-    script.src = '//embed.typeform.com/next/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup on unmount
-      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
   return (
     <motion.section
       initial="hidden"
@@ -119,11 +120,7 @@ export default function ContactSection({
               variants={itemVariants}
               className="bg-white rounded-2xl shadow-2xl overflow-hidden"
             >
-              <div
-                ref={typeformRef}
-                data-tf-live="01KAF384A3ZB71SN3JRSRCSWAD"
-                className="w-full min-h-[450px]"
-              />
+              <TypeformEmbed formId={typeformId} />
             </motion.div>
           </div>
         </div>

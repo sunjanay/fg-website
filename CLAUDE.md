@@ -114,6 +114,43 @@ No navigation, for embedding:
 
 ### Reusable Components
 
+#### TypeformEmbed (`components/shared/TypeformEmbed.tsx`)
+**ALWAYS use this component for Typeform embeds.** It handles script loading properly for Next.js.
+
+```tsx
+import TypeformEmbed from '@/components/shared/TypeformEmbed';
+
+// Default contact form
+<TypeformEmbed />
+
+// Custom form ID
+<TypeformEmbed formId="your-form-id" />
+
+// Custom height
+<TypeformEmbed minHeight="500px" />
+```
+
+Default form ID: `01KAF384A3ZB71SN3JRSRCSWAD` (main Foster Greatness contact form)
+
+#### ContactSection (`components/site/ContactSection.tsx`)
+Full contact section with Typeform embed, email button, and community link:
+
+```tsx
+import ContactSection from '@/components/site/ContactSection';
+
+// Default settings
+<ContactSection />
+
+// Custom email and title
+<ContactSection
+  title="Get in Touch"
+  email="info@fostergreatness.co"
+/>
+
+// Custom Typeform
+<ContactSection typeformId="custom-form-id" />
+```
+
 #### DonateSection (`components/site/DonateSection.tsx`)
 Reusable donation component with Stripe integration:
 
@@ -175,12 +212,17 @@ Use Tailwind classes: `text-fg-navy`, `bg-fg-blue`, etc.
 - Use charity/pity language
 - Hardcode campaign data in components (use `data/campaigns.ts`)
 - Create duplicate campaign definitions
+- Hardcode email addresses (use `siteConfig.donation.contactEmail`)
+- Embed Typeform directly with `data-tf-live` - use `TypeformEmbed` component
 
 ### ALWAYS
 - Use the configuration system for campaign/content changes
 - Import from `@/data` for campaign and site data
 - Follow brand colors and voice guidelines
 - Test changes don't break navigation or donate page
+- Use `TypeformEmbed` component for any Typeform embeds
+- Use `ContactSection` component for contact forms
+- Use `info@fostergreatness.co` as the contact email (configured in `data/site.ts`)
 
 ---
 
@@ -215,8 +257,10 @@ npm start       # Production server
 
 ### Key Components
 - `components/site/Header.tsx` - Main navigation (uses campaign data)
-- `components/site/Footer.tsx` - Site footer
+- `components/site/Footer.tsx` - Site footer with contact banner
+- `components/site/ContactSection.tsx` - Contact section with Typeform
 - `components/site/DonateSection.tsx` - Reusable donation section
+- `components/shared/TypeformEmbed.tsx` - Typeform embed (use for ALL Typeform embeds)
 - `components/StripeBuyButton.tsx` - Stripe embed
 
 ### Campaign Pages
