@@ -1,8 +1,43 @@
 import Link from 'next/link';
+import { Mail, Heart } from 'lucide-react';
+import { siteConfig } from '@/data';
 
 export default function Footer() {
   return (
     <footer className="bg-navy text-white mt-auto">
+      {/* Contact Banner */}
+      <div className="bg-gradient-to-r from-fg-navy to-fg-blue">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-white/10 rounded-full">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Get in Touch</h3>
+                <p className="text-white/80 text-sm">We'd love to hear from you</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href={`mailto:${siteConfig.donation.contactEmail}`}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-fg-navy font-semibold rounded-full hover:bg-fg-light-blue transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                {siteConfig.donation.contactEmail}
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
+              >
+                Contact Form
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
@@ -19,7 +54,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Community</h3>
             <ul className="space-y-2">
-              <li><a href="https://community.fostergreatness.co" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition">Join Community</a></li>
+              <li><a href={siteConfig.links.community} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition">Join Community</a></li>
               <li><Link href="/thriver-stories" className="text-gray-300 hover:text-white transition">Thriver Stories</Link></li>
               <li><Link href="/events" className="text-gray-300 hover:text-white transition">Events</Link></li>
               <li><Link href="/storytellers-collective" className="text-gray-300 hover:text-white transition">Storytellers Collective</Link></li>
@@ -43,6 +78,14 @@ export default function Footer() {
             <p className="text-gray-300 mb-4">
               Creating lifelong community and belonging for current and former foster youth nationwide.
             </p>
+            <ul className="space-y-2 mb-4">
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
             <div className="flex space-x-4">
               <a href="https://facebook.com/fostergreatness" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition" aria-label="Facebook">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -55,8 +98,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Foster Greatness. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} Foster Greatness. All rights reserved.</p>
+          <div className="flex items-center gap-2 text-gray-400 text-sm">
+            <span>Made with</span>
+            <Heart className="w-4 h-4 text-red-400 fill-current" />
+            <span>for foster youth everywhere</span>
+          </div>
         </div>
       </div>
     </footer>

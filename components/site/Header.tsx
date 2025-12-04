@@ -122,6 +122,10 @@ export default function Header() {
               <Link href="/partnerships" className="px-5 py-2.5 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105">
                 Partnerships
               </Link>
+
+              <Link href="/contact" className="px-5 py-2.5 text-gray-700 hover:text-navy font-semibold transition-all duration-200 hover:scale-105">
+                Contact
+              </Link>
             </nav>
 
             {/* Actions */}
@@ -373,6 +377,7 @@ export default function Header() {
                 </div>
               </div>
               <Link href="/partnerships" className="text-gray-700 hover:text-navy hover:bg-white transition-all px-4 py-3 rounded-lg font-semibold">Partnerships</Link>
+              <Link href="/contact" className="text-gray-700 hover:text-navy hover:bg-white transition-all px-4 py-3 rounded-lg font-semibold">Contact</Link>
             </div>
           </nav>
         )}
